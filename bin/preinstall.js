@@ -9,7 +9,6 @@ if (package.devDependencies['bourbon-neat'] !== '~1.9') {
     // node-sass version that doesn't require Python 2. The changes to Wyrm to
     // support Neat 2.0+ are all fairly minor changes, but it deeply affects the
     // grid system and might be more of a liability than an old release of Neat.
-    // See: https://github.com/ikiwihome/sphinx_evas_theme/pull/771
     console.error(
         'bourbon-neat 1.9 is required, Wyrm is not compatible with Neat 2.0+.'
     );
