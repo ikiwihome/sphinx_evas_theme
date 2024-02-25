@@ -1,0 +1,10 @@
+[sphinx-evas-theme.sphinx-evas-theme]
+file_filter = sphinx_evas_theme/locale/<lang>/LC_MESSAGES/sphinx.po
+minimum_perc = 60
+source_file = sphinx_evas_theme/locale/en/LC_MESSAGES/sphinx.po
+source_lang = en
+
+[main]
+host = https://www.transifex.com
+type = PO
+
