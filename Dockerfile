@@ -1,6 +1,8 @@
 # This implicitly includes Python 3.10
 FROM node:14-alpine
 
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.cloud.tencent.com/g' /etc/apk/repositories
+
 # Do not use --update since that will also fetch the
 # latest node-current package
 # 'make' is needed for building documentation
@@ -10,6 +12,12 @@ RUN apk add npm make py3-pip py3-wheel
 # because the above caused issues
 RUN node -v && node -v | grep -q v14 &&\
     python3 --version && python3 --version | grep -q "3.10"
+
+RUN pip install -i https://mirrors.cloud.tencent.com/pypi/simple/ -U pip
+RUN pip config set global.index-url https://mirrors.cloud.tencent.com/pypi/simple/
+RUN pip config set install.mirrors https://mirrors.cloud.tencent.com/pypi/simple/
+RUN pip config set install.use-mirrors true
+RUN pip config set install.trusted-host mirrors.cloud.tencent.com
 
 RUN pip install pip --upgrade
 
@@ -30,6 +38,8 @@ COPY package.json /project/
 COPY bin/preinstall.js /project/bin/preinstall.js
 
 RUN cd /project
+
+RUN npm config set registry http://mirrors.cloud.tencent.com/npm/
 
 # It matters that the node environment is installed into the same
 # folder, i.e. /project where we will run the environment from
