@@ -5,9 +5,6 @@ EVAS Docs Sphinx Theme
 .. image:: https://img.shields.io/pypi/v/sphinx_evas_theme.svg
    :target: https://pypi.python.org/pypi/sphinx_evas_theme
    :alt: Pypi Version
-.. image:: https://circleci.com/gh/readthedocs/sphinx_evas_theme.svg?style=svg
-   :alt: Build Status
-   :target: https://circleci.com/gh/readthedocs/sphinx_evas_theme
 .. image:: https://img.shields.io/pypi/l/sphinx_evas_theme.svg
    :target: https://pypi.python.org/pypi/sphinx_evas_theme/
    :alt: License
