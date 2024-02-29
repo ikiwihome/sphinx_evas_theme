@@ -75,6 +75,6 @@ def setup(app):
     # Extend the default context when rendering the templates.
     app.connect("html-page-context", extend_html_context)
 
-    app.pdf_file = 'test'
+    # app.pdf_file = 'test'
 
     return {'parallel_read_safe': True, 'parallel_write_safe': True}
