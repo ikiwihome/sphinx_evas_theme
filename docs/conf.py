@@ -19,8 +19,8 @@ version = theme_version
 release = theme_version_full
 author = u'EVAS Intelligence Co., Ltd'
 copyright = author
-# language = 'en'
-language = 'zh_CN'
+language = 'en'
+# language = 'zh_CN'
 
 extensions = [
     'sphinx.ext.intersphinx',
@@ -84,7 +84,7 @@ latex_engine = 'xelatex'
 # latex_logo = "demo/static/logo-wordmark-light.svg"
 
 latex_documents = [
-  (master_doc, '{0}.tex'.format(project), project, author, 'manual'),
+  (master_doc, '{0}.tex'.format(slug), project, author, 'manual'),
 ]
 
 man_pages = [
