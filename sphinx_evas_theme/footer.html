@@ -48,7 +48,7 @@
 
     </p>
 
-    {%- if pdf_file %}
+    {% if pdf_file %}
     <li class="footer-aside">
       <a href="{{ pathto('', 1) }}{{ pdf_file }}/pdf/" class="fa fa-file-pdf-o"> {{ _('Download PDF') }}</a>
     </li>
