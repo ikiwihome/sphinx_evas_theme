@@ -6431,8 +6431,13 @@ footer p {
     margin-bottom: 12px
 }
 
-footer .footer {
-    float: right
+footer li {
+    display: inline-block
+}
+
+footer li.footer-aside {
+    float: right;
+    display: inline-block
 }
 
 .rst-content footer span.commit tt,

@@ -17,7 +17,7 @@ project = u'EVAS Docs Sphinx Theme'
 slug = re.sub(r'\W+', '-', project.lower())
 version = theme_version
 release = theme_version_full
-author = u'Chao, EVAS Intelligence Co., Ltd'
+author = u'EVAS Intelligence Co., Ltd'
 copyright = author
 language = 'en'
 
@@ -31,7 +31,11 @@ extensions = [
 ]
 
 templates_path = ['_templates']
-source_suffix = '.rst'
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.md': 'markdown',
+    '.txt': 'markdown',
+}
 exclude_patterns = []
 locale_dirs = ['locale/']
 gettext_compact = False
@@ -74,6 +78,7 @@ html_favicon = "demo/static/favicon.ico"
 
 htmlhelp_basename = slug
 
+html_last_updated_fmt = '%x %X'
 
 latex_documents = [
   ('index', '{0}.tex'.format(slug), project, author, 'manual'),
