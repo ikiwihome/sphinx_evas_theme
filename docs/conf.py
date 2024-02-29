@@ -19,7 +19,8 @@ version = theme_version
 release = theme_version_full
 author = u'EVAS Intelligence Co., Ltd'
 copyright = author
-language = 'en'
+# language = 'en'
+language = 'zh_CN'
 
 extensions = [
     'sphinx.ext.intersphinx',
