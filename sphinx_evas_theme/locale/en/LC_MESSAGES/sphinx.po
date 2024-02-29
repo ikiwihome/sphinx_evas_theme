@@ -105,11 +105,6 @@ msgstr ""
 msgid "provided by %(evas_web)s"
 msgstr ""
 
-#. download pdf
-#: sphinx_evas_theme/footer.html:53
-msgid "Download PDF"
-msgstr ""
-
 #: sphinx_evas_theme/layout.html:97
 #, python-format
 msgid "Search within %(docstitle)s"
