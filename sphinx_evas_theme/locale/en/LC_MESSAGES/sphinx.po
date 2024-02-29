@@ -87,27 +87,27 @@ msgstr ""
 
 #. the variable "sphinx_web" is a link to the Sphinx project documentation with
 #. the text "Sphinx"
-#: sphinx_evas_theme/footer.html:53
+#: sphinx_evas_theme/footer.html:63
 #, python-format
 msgid "Built with %(sphinx_web)s using a"
 msgstr ""
 
+#. download pdf
+#: sphinx_evas_theme/footer.html:49 sphinx_evas_theme/footer.html:53
+msgid "Download PDF"
+msgstr ""
+
 #. "theme" refers to a theme for Sphinx, which alters the appearance of the
 #. generated documentation
-#: sphinx_evas_theme/footer.html:55
+#: sphinx_evas_theme/footer.html:66
 msgid "theme"
 msgstr ""
 
 #. this is always used as "provided by EVAS Docs", and should not imply
-#. EVAS Docs is an author of the generated documentation.
-#: sphinx_evas_theme/footer.html:57
+#. is an author of the generated documentation.
+#: sphinx_evas_theme/footer.html:67
 #, python-format
 msgid "provided by %(evas_web)s"
-msgstr ""
-
-#. download pdf
-#: sphinx_evas_theme/footer.html:53
-msgid "Download PDF"
 msgstr ""
 
 #: sphinx_evas_theme/layout.html:97
