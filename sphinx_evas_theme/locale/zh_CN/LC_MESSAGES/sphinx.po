@@ -101,7 +101,7 @@ msgstr "利用 %(sphinx_web)s 构建，使用的 "
 #. download pdf
 #: sphinx_evas_theme/footer.html:49 sphinx_evas_theme/footer.html:53
 msgid "Download PDF"
-msgstr ""
+msgstr "下载 PDF"
 
 #. "theme" refers to a theme for Sphinx, which alters the appearance of the
 #. generated documentation
