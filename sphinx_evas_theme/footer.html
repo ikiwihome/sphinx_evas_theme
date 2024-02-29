@@ -47,12 +47,17 @@
       {%- endif -%}
 
     </p>
-
-
-    <li class="footer-aside">
-      <a href="{{ pathto('', 1) }}{{ pdf_file }}/pdf/" class="fa fa-file-pdf-o"> {{ _('Download PDF') }}</a>
-    </li>
-
+    {% if READTHEDOCS %}
+      {%- if pdf_file %}
+      <li class="footer-aside">
+        <a href="{{ pathto('', 1) }}/pdf/" class="fa fa-file-pdf-o"> {{ _('Download PDF') }}</a>
+      </li>
+      {%- else %}
+      <li class="footer-aside">
+        <a href="{{ pathto('', 1) }}{{ pdf_file }}.pdf" class="fa fa-file-pdf-o"> {{ _('Download PDF') }}</a>
+      </li>
+      {%- endif %}
+    {% endif %}
 
     {%- endblock %}
   </div>
