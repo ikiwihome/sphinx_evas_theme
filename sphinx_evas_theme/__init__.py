@@ -35,6 +35,7 @@ def config_initiated(app, config):
 def extend_html_context(app, pagename, templatename, context, doctree):
      # Add ``sphinx_version_info`` tuple for use in Jinja templates
      context['sphinx_version_info'] = sphinx_version
+     context['pdf_file'] = "test"
 
 
 # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
@@ -74,7 +75,6 @@ def setup(app):
     # Extend the default context when rendering the templates.
     app.connect("html-page-context", extend_html_context)
 
-    app.config.pdf_file = 'test'
-    app.globalcontext.update(self.config.pdf_file)
+    app.pdf_file = 'test'
 
     return {'parallel_read_safe': True, 'parallel_write_safe': True}
