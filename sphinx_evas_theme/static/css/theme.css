@@ -805,6 +805,26 @@ textarea {
     content: ""
 }
 
+.icon-home {
+    color: #333333 !important;
+}
+
+.icon-home:hover {
+    background-color: #d6d6d6 !important;
+}
+
+.version {
+    color: #000000 !important;
+}
+
+a:hover {
+    color: #bd2c2a !important;
+}
+
+.logo {
+    width: 240px !important;
+}
+
 .fa-home:before,
 .icon-home:before {
     content: ""
@@ -4302,6 +4322,20 @@ a .wy-menu-vertical li button.toctree-expand {
     height: 56px
 }
 
+/* override table width restrictions */
+@media screen and (min-width: 767px) {
+
+    .wy-table-responsive table td {
+        /* !important prevents the common CSS stylesheets from overriding
+          this as on RTD they are loaded after this stylesheet */
+        white-space: normal !important;
+    }
+
+    .wy-table-responsive {
+        overflow: visible !important;
+    }
+}
+
 @media screen and (max-width:768px) {
     .wy-tray-container {
         bottom: auto;
@@ -6185,16 +6219,16 @@ html {
     padding: .809em;
     margin-bottom: .809em;
     z-index: 200;
-    background-color: #2980b9;
+    background-color: #e3e3e3 !important;
     text-align: center;
     color: #fcfcfc
 }
 
 .wy-side-nav-search input[type=text] {
     width: 100%;
-    border-radius: 50px;
+    border-radius: 0px !important;
     padding: 6px 12px;
-    border-color: #2472a4
+    border-color: #333333 !important;
 }
 
 .wy-side-nav-search img {
@@ -6202,7 +6236,7 @@ html {
     margin: auto auto .809em;
     height: 45px;
     width: 45px;
-    background-color: #2980b9;
+    border-color: #333333 !important;
     padding: 5px;
     border-radius: 100%
 }
@@ -6322,7 +6356,7 @@ html {
 
 .wy-nav-top {
     display: none;
-    background: #2980b9;
+    background: #333333;
     color: #fff;
     padding: .4045em .809em;
     position: relative;
@@ -6351,7 +6385,7 @@ html {
     margin-right: 12px;
     height: 45px;
     width: 45px;
-    background-color: #2980b9;
+    background-color: #333333;
     padding: 5px;
     border-radius: 100%
 }
@@ -6372,7 +6406,7 @@ html {
 .wy-nav-content {
     padding: 1.618em 3.236em;
     height: 100%;
-    max-width: 800px;
+    max-width: 100% !important;
     margin: auto
 }
 
@@ -6395,6 +6429,10 @@ footer {
 
 footer p {
     margin-bottom: 12px
+}
+
+footer .footer {
+    float: right
 }
 
 .rst-content footer span.commit tt,
@@ -7728,6 +7766,26 @@ span[id*=MathJax-Span] {
 
 .math {
     text-align: center
+}
+
+/* For space between the return type and function name */
+a.internal+code.descname::before {
+    content: ' ';
+}
+
+/* For space between the arguments of the function */
+a.internal+em::before {
+    content: ' ';
+}
+
+.tool-sha256 {
+    word-break: break-all;
+}
+
+/* Fix extra space in nested toctrees */
+.toctree-wrapper ul li>* {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
 }
 
 @font-face {
