@@ -78,8 +78,12 @@ htmlhelp_basename = slug
 
 html_last_updated_fmt = '%x %X'
 
+latex_engine = 'xelatex'
+
+# latex_logo = "demo/static/logo-wordmark-light.svg"
+
 latex_documents = [
-  ('index', '{0}.tex'.format(slug), project, author, 'manual'),
+  (master_doc, '{0}.tex'.format(project), project, author, 'manual'),
 ]
 
 man_pages = [
