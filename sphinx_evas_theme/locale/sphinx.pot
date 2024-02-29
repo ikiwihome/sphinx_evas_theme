@@ -1,15 +1,15 @@
 # Translations template for sphinx_evas_theme.
-# Copyright (C) 2023 ORGANIZATION
+# Copyright (C) 2024 ORGANIZATION
 # This file is distributed under the same license as the sphinx_evas_theme
 # project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: sphinx_evas_theme 1.2.0rc4\n"
+"Project-Id-Version: sphinx_evas_theme 0.1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-02-06 15:36+0100\n"
+"POT-Creation-Date: 2024-02-06 15:36+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -107,7 +107,7 @@ msgstr ""
 #. download pdf
 #: sphinx_evas_theme/footer.html:53
 msgid "Download PDF"
-msgstr "下载 PDF"
+msgstr ""
 
 #: sphinx_evas_theme/layout.html:97
 #, python-format

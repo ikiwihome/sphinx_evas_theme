@@ -1,8 +1,8 @@
 # English translations for sphinx_evas_theme.
-# Copyright (C) 2019 ORGANIZATION
+# Copyright (C) 2024 ORGANIZATION
 # This file is distributed under the same license as the sphinx_evas_theme
 # project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 # 
 # Translators:
 # 王赛 <wangsai@bootcss.com>, 2019
@@ -11,9 +11,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: sphinx_evas_theme 0.4.3.dev0\n"
+"Project-Id-Version: sphinx_evas_theme 0.1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-02-06 15:36+0100\n"
+"POT-Creation-Date: 2024-02-06 15:36+0100\n"
 "PO-Revision-Date: 2019-07-16 21:44+0000\n"
 "Last-Translator: JY3, 2022\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/readthedocs/teams/101354/zh_CN/)\n"
@@ -110,6 +110,11 @@ msgstr "主题"
 #, python-format
 msgid "provided by %(evas_web)s"
 msgstr "由 %(evas_web)s 开发"
+
+#. download pdf
+#: sphinx_evas_theme/footer.html:53
+msgid "Download PDF"
+msgstr "下载 PDF"
 
 #: sphinx_evas_theme/layout.html:97
 #, python-format
