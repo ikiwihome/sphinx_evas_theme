@@ -32,9 +32,7 @@ extensions = [
 
 templates_path = ['_templates']
 source_suffix = {
-    '.rst': 'restructuredtext',
-    '.md': 'markdown',
-    '.txt': 'markdown',
+    '.rst': 'restructuredtext'
 }
 exclude_patterns = []
 locale_dirs = ['locale/']
