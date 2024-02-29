@@ -70,6 +70,7 @@ def setup(app):
 
     # sphinx emits the permalink icon for headers, so choose one more in keeping with our theme
     app.config.html_permalinks_icon = "\uf0c1"
+    app.config.pdf_file = "abc"
 
     # Extend the default context when rendering the templates.
     app.connect("html-page-context", extend_html_context)
