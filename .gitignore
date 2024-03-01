@@ -27,3 +27,4 @@ sphinx_evas_theme/static/fonts/RobotoSlab/
 .envrc
 # Used for dockerized builds
 .container_id
+.vscode/

@@ -1,0 +1,55 @@
+%%
+%%
+%% Start of EVAS pdf title page style configuration (titlepage.tex)
+%%
+%%
+
+\makeatletter
+\newgeometry{left=0cm,right=0cm,top=0cm,bottom=0cm}
+
+
+\cfoot{www.evas.ai}
+
+\renewcommand{\headrulewidth}{0pt}
+
+\begin{minipage}[b]{5cm}
+	\vspace{0.8cm}
+	\hspace{15cm}
+	\sphinxlogo
+\end{minipage}
+
+\vspace{4cm}
+
+{\color{myblue}\rule{30pt}{6cm}
+    \hspace{0.3cm}
+    \begin{minipage}[b]{19cm}
+	    {\fontsize{36pt}{1pt}\textbf{\color{mygray}\@title}\vspace{0.4cm}}\\
+	    {\fontsize{28pt}{1pt}\textbf{\color{mygray}\subtitle}\vspace{0.4cm}}
+    \end{minipage}
+}
+\vspace{10cm}
+
+\begin{flushright}
+    \setlength\parindent{10cm}
+    \hspace{0.2cm}
+    \begin{minipage}[b]{8cm}
+        {\LARGE{\draftorrelease\hspace{0.5em}\version}\vspace{0.3em}}\smallskip\newline
+        {\LARGE{\@author}\vspace{0.2em}}\smallskip\newline
+        {\LARGE{\@date}\vspace{1em}}\smallskip
+    \end{minipage}
+    {\color{myblue}\rule{30pt}{4cm}}
+\end{flushright}
+
+\begin{minipage}[b]{20cm}
+	\vspace{4em}\hspace{1cm}
+	\large{©\the\year\hspace{0.3em} EVAS Intelligence}\smallskip\newline
+\end{minipage}
+
+\restoregeometry
+\makeatother
+
+%%
+%%
+%% End of EVAS pdf title page style configuration (titlepage.tex)
+%%
+%%
