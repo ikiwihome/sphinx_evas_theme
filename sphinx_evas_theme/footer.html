@@ -46,35 +46,35 @@
       </span>
       {%- endif -%}
 
-    </p>
-    {% if READTHEDOCS %}
-    {%- if pdf_file %}
-    <li class="footer-aside">
-      <a href="{{ pathto('', 1) }}pdf/" class="fa fa-file-pdf-o"> {%- trans %}Download PDF{% endtrans %}</a>
-    </li>
-    {%- endif %}
-    {% else %}
-    {%- if pdf_file %}
-    <li class="footer-aside">
-      <a href="{{ pathto('', 1) }}{{ pdf_file }}.pdf" class="fa fa-file-pdf-o"> {%- trans %}Download PDF{% endtrans
-        %}</a>
-    </li>
-    {%- endif %}
-    {% endif %}
-    {%- endblock %}
-  </div>
+      {% if show_sphinx %}
+	  <br>
+      {%- set sphinx_web = '<a href="https://www.sphinx-doc.org/">Sphinx</a>' %}
+      {%- set evas_web = '<a href="https://www.evas.ai">EVAS Intelligence</a>' %}
+      {#- Translators: the variable "sphinx_web" is a link to the Sphinx project documentation with the text "Sphinx" #}
+      {%- trans sphinx_web=sphinx_web, evas_web=evas_web %}Built with {{ sphinx_web }} using a{% endtrans %}
+      {#- Translators: "theme" refers to a theme for Sphinx, which alters the appearance of the generated documentation #}
+      <a href="https://github.com/ikiwihome/sphinx_evas_theme">{% trans %}theme{% endtrans %}</a>
+      {#- Translators: this is always used as "provided by EVAS", and should not imply is an author of the generated
+      documentation. #}
+      {% trans %}provided by {{ evas_web }}{% endtrans %}.
+      {% endif %}
 
-  {% if show_sphinx %}
-  {%- set sphinx_web = '<a href="https://www.sphinx-doc.org/">Sphinx</a>' %}
-  {%- set evas_web = '<a href="https://www.evas.ai">EVAS Intelligence</a>' %}
-  {#- Translators: the variable "sphinx_web" is a link to the Sphinx project documentation with the text "Sphinx" #}
-  {%- trans sphinx_web=sphinx_web, evas_web=evas_web %}Built with {{ sphinx_web }} using a{% endtrans %}
-  {#- Translators: "theme" refers to a theme for Sphinx, which alters the appearance of the generated documentation #}
-  <a href="https://github.com/ikiwihome/sphinx_evas_theme">{% trans %}theme{% endtrans %}</a>
-  {#- Translators: this is always used as "provided by EVAS", and should not imply is an author of the generated
-  documentation. #}
-  {% trans %}provided by {{ evas_web }}{% endtrans %}.
-  {% endif %}
+      {% if READTHEDOCS %}
+      {%- if pdf_file %}
+      <span class="footer-aside">
+        <a href="{{ pathto('', 1) }}pdf/" class="fa fa-file-pdf-o">&nbsp{%- trans %}Download PDF{% endtrans %}</a>
+      </span>
+      {%- endif %}
+      {% else %}
+      {%- if pdf_file %}
+      <span class="footer-aside">
+        <a href="{{ pathto('', 1) }}{{ pdf_file }}.pdf" class="fa fa-file-pdf-o">&nbsp{%- trans %}Download PDF{% endtrans%}</a>
+      </span>
+      {%- endif %}
+      {% endif %}
+      {%- endblock %}
+    </p>
+  </div>
 
   {%- block extrafooter %} {% endblock %}
 

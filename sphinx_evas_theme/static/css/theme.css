@@ -6435,7 +6435,7 @@ footer li {
     display: inline-block
 }
 
-footer li.footer-aside {
+footer span.footer-aside {
     float: right;
     display: inline-block
 }
