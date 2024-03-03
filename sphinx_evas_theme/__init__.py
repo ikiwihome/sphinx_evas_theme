@@ -26,22 +26,32 @@ def config_initiated(app: Sphinx, config: Config) -> None:
     theme_path = os.path.abspath(os.path.dirname(__file__))
 
     if not config['language']:
-        config['language'] = 'en'
+        config['language'] = 'zh_CN'
 
-    if not config['project']:
-        config['project'] = u'EVAS Docs Template'
+    if config['project'] == 'Python':
+        config['project'] = u'奕行智能项目文档模板'
 
-    if not config['author']:
+    if config['author'] == 'unknown':
         if config['language'] == 'zh_CN':
             config['author'] = u'奕行智能科技有限公司'
         else:
             config['author'] = u'EVAS Intelligence Co., Ltd'
+
+    if not config['copyright']:
+        currentYear = datetime.now().year
+        if config['language'] == 'zh_CN':
+            config['copyright'] = '2022-' + str(currentYear)+ ', ' + '奕行智能科技有限公司'
+        else:
+            config['copyright'] = '2022-' + str(currentYear)+ ', ' + 'EVAS Intelligence Co., Ltd'
 
     if not config['html_static_path']:
         config['html_static_path'] = ['_static']
 
     if not config['templates_path']:
         config['templates_path'] = ['_templates']
+
+    if not config['html_title']:
+        config['html_title'] = config['project']
 
     if not config['html_logo']:
         config['html_logo'] = os.path.join(theme_path, 'static', 'logo.svg')

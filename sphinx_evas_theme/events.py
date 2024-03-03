@@ -4,9 +4,7 @@ import re
 import sys
 
 from sphinx.application import Sphinx
-from sphinx.builders.latex import LaTeXBuilder
 from sphinx.config import Config
-from sphinx.util.fileutil import copy_asset_file
 
 from . import __version__, latex_templates
 
