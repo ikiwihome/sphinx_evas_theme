@@ -98,11 +98,11 @@ def config_initiated(app, config):
         latex_package = ''
         with open(os.path.join(theme_path, 'latex_templates/docinfo.sty'), 'r') as template:
             latex_package = template.read()
-        latex_package = latex_package.replace('<subtitle>', app.config.subtitle)
-        latex_package = latex_package.replace('<draft_or_release>', app.config.draft_or_release)
+        latex_package = latex_package.replace('<subtitle>', config.subtitle)
+        latex_package = latex_package.replace('<draft_or_release>', config.draft_or_release)
 
         if app.config.pdf_watermark is True:
-            latex_package = latex_package.replace('<watermarktext>', app.config.watermarktext)
+            latex_package = latex_package.replace('<watermarktext>', config.watermarktext)
         else:
             latex_package = latex_package.replace('<watermarktext>', '')
 
