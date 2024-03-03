@@ -6,7 +6,7 @@ documentation users on both desktop and mobile devices. This theme is commonly
 used with projects on `EVAS Docs`_ but can work with any Sphinx project.
 
 .. _Sphinx: http://www.sphinx-doc.org
-.. _EVAS Docs: http://www.readthedocs.org
+.. _EVAS Docs: https://github.com/ikiwihome/sphinx_evas_theme
 
 Using this theme
 ----------------
@@ -17,34 +17,11 @@ Using this theme
 :doc:`configuring`
     Theme configuration and customization options.
 
-:ref:`supported-browsers`
-    Supported browser/operating system combinations.
-
-:ref:`supported-dependencies`
-    Supported project dependencies, like Python and Sphinx.
-
 Development
 -----------
 
-:doc:`contributing`
-    How to contribute changes to the theme.
-
-:doc:`Development guidelines <development>`
-    Guidelines the theme developers use for developing and testing changes.
-
-`EVAS Docs contributor guide`_
-    Our contribution guidelines extend to all projects maintained by Read the
-    Docs core team.
-
-:doc:`changelog`
-    The theme development changelog.
-
 :doc:`Demo documentation <demo/structure>`
     The theme's styleguide test environment, where new changes are tested.
-
-
-.. _EVAS Docs contributor guide: https://docs.readthedocs.io/en/stable/contribute.html
-
 
 .. Hidden TOCs
 
@@ -55,14 +32,6 @@ Development
 
    installing
    configuring
-   development
-   contributing
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-
-   changelog
 
 .. toctree::
     :maxdepth: 2
@@ -82,7 +51,7 @@ Development
     :hidden:
 
     demo/long
-    
+
 .. toctree::
     :maxdepth: 3
     :caption: Breadcrumbs

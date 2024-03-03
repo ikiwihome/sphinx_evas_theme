@@ -11,24 +11,16 @@ sys.path.append(os.path.abspath('./demo/'))
 
 from sphinx_evas_theme import __version__ as theme_version
 from sphinx_evas_theme import __version_full__ as theme_version_full
-from sphinx.locale import _
 
 project = u'EVAS Docs Sphinx Theme'
 slug = re.sub(r'\W+', '-', project.lower())
 version = theme_version
 release = theme_version_full
 author = u'EVAS Intelligence Co., Ltd'
-copyright = author
+# copyright = author
 language = 'en'
 # language = 'zh_CN'
 
-extensions = [
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.autodoc',
-    'sphinx.ext.autosummary',
-    'sphinx.ext.mathjax',
-    'sphinx.ext.viewcode',
-    'sphinx_evas_theme',
-]
+extensions = ['sphinx_evas_theme']
 
 html_theme = 'sphinx_evas_theme'
