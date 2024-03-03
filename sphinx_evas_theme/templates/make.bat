@@ -4,32 +4,45 @@ chcp 65001 > NUL 2>&1
 setlocal
 pushd %~dp0
 
-echo runtime environment checking...
+set ENV_FAIL=0
+
+echo *************** 依赖环境检查... *******************
 where python > nul 2>&1
 if not %errorlevel% equ 0 (
-    echo python NOK
+	echo python  ---------------------------- [NOK]
+	set ENV_FAIL=1
 ) else (
-    echo python OK
+	echo python  ---------------------------- [OK]
 )
 where perl > nul 2>&1
 if not %errorlevel% equ 0 (
-    echo perl NOK
+	echo perl    ---------------------------- [NOK]
+	set ENV_FAIL=1
 ) else (
-    echo perl OK
+	echo perl    ---------------------------- [OK]
+
 )
 where latexmk > nul 2>&1
 if not %errorlevel% equ 0 (
-    echo latexmk NOK
+	echo latexmk ---------------------------- [NOK]
+	set ENV_FAIL=1
 ) else (
-    echo latexmk OK
+	echo latexmk ---------------------------- [OK]
+
 )
 where xelatex > nul 2>&1
 if not %errorlevel% equ 0 (
-    echo xelatex NOK
+	echo xelatex ---------------------------- [NOK]
+	set ENV_FAIL=1
 ) else (
-    echo xelatex OK
+	echo xelatex ---------------------------- [OK]
+
 )
-echo runtime environment check complete...
+echo *************** 依赖环境检查完成... ***************
+
+if not %ENV_FAIL% equ 0 (
+	goto end
+)
 
 REM Command file for Sphinx documentation
 
