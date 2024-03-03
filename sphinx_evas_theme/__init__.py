@@ -9,72 +9,48 @@ import os
 from pathlib import Path
 from datetime import datetime
 from sys import version_info as python_version
-from sphinx import version_info as sphinx_version
+from sphinx.application import Sphinx
 from sphinx.config import Config
+from sphinx import version_info as sphinx_version
 from sphinx.locale import _
 from sphinx.util.logging import getLogger
 
 
-__version__ = '0.3.0'
+__version__ = '0.4.0'
 __version_full__ = __version__
 
 logger = getLogger(__name__)
 
-def config_initiated(app, config):
+def config_initiated(app: Sphinx, config: Config) -> None:
 
     theme_path = os.path.abspath(os.path.dirname(__file__))
 
-    if not config.language:
-        config.language = 'en'
+    if not config['language']:
+        config['language'] = 'en'
 
-    if not config.project:
-        config.project = u'EVAS Docs Template'
+    if not config['project']:
+        config['project'] = u'EVAS Docs Template'
 
-    if not config.author:
-        if config.language == 'zh_CN':
-            config.author = u'奕行智能科技有限公司'
+    if not config['author']:
+        if config['language'] == 'zh_CN':
+            config['author'] = u'奕行智能科技有限公司'
         else:
-            config.author = u'EVAS Intelligence Co., Ltd'
+            config['author'] = u'EVAS Intelligence Co., Ltd'
 
-    # Add any Sphinx extension module names here, as strings. They can be
-    # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
-    # ones.
-    config.extensions = [
-        'recommonmark',
-        'sphinx_markdown_tables',
-        # Auto-generate section labels.
-        # 'sphinx.ext.autosectionlabel',
-        'sphinx.ext.intersphinx',
-        'sphinx.ext.autodoc',
-        'sphinx.ext.autosummary',
-        'sphinx.ext.mathjax',
-        'sphinx.ext.viewcode',
-        'sphinx_copybutton',
-        'sphinx_evas_theme'
-        #'docxbuilder' # used to generate word docx file
-    ]
+    if not config['html_static_path']:
+        config['html_static_path'] = ['_static']
 
-    if not config.source_suffix:
-        config.source_suffix = {
-            '.rst': 'restructuredtext',
-            '.md': 'markdown',
-            '.txt': 'markdown',
-        }
+    if not config['templates_path']:
+        config['templates_path'] = ['_templates']
 
-    if not config.html_static_path:
-        config.html_static_path = ['_static']
+    if not config['html_logo']:
+        config['html_logo'] = os.path.join(theme_path, 'static', 'logo.svg')
 
-    if not config.templates_path:
-        config.templates_path = ['_templates']
+    if not config['html_favicon']:
+        config['html_favicon'] = os.path.join(theme_path, 'static', 'favicon.ico')
 
-    if not config.html_logo:
-        config.html_logo = os.path.join(theme_path, 'static', 'logo.svg')
-
-    if not config.html_favicon:
-        config.html_favicon = os.path.join(theme_path, 'static', 'favicon.ico')
-
-    if not config.html_theme_options:
-        config.html_theme_options = {
+    if not config['html_theme_options']:
+        config['html_theme_options'] = {
             'logo_only': False,
             'display_version': True,
             'prev_next_buttons_location': 'bottom',
@@ -89,8 +65,8 @@ def config_initiated(app, config):
             'titles_only': False
         }
 
-    if not config.master_doc:
-        config.master_doc = 'index'
+    if not config['master_doc']:
+        config['master_doc'] = 'index'
 
     builder_name = Path(app.outdir).parts[-1]
     if builder_name == "pdf" or builder_name == "latex" or builder_name == "latexpdf":
@@ -98,11 +74,11 @@ def config_initiated(app, config):
         latex_package = ''
         with open(os.path.join(theme_path, 'latex_templates/docinfo.sty'), 'r') as template:
             latex_package = template.read()
-        latex_package = latex_package.replace('<subtitle>', config.subtitle)
-        latex_package = latex_package.replace('<draft_or_release>', config.draft_or_release)
+        latex_package = latex_package.replace('<subtitle>', config['subtitle'])
+        latex_package = latex_package.replace('<draft_or_release>', config['draft_or_release'])
 
         if config.pdf_watermark is True:
-            latex_package = latex_package.replace('<watermarktext>', config.watermarktext)
+            latex_package = latex_package.replace('<watermarktext>', config['watermarktext'])
         else:
             latex_package = latex_package.replace('<watermarktext>', '')
 
@@ -152,6 +128,22 @@ def setup(app: "Sphinx"):
     app.add_config_value('draft_or_release', u'Release', 'env', [str])
     app.add_config_value('watermarktext', u'EVAS Intelligence Confidential', 'env', [str])
     app.add_config_value('pdf_watermark', True, 'env', [bool])
+
+    # Add any Sphinx extension module names here, as strings. They can be
+    # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
+    # ones.
+    app.setup_extension('myst_parser')
+    app.setup_extension('sphinx_markdown_tables')
+    app.setup_extension('sphinx_copybutton')
+    app.setup_extension('sphinx.ext.intersphinx')
+    app.setup_extension('sphinx.ext.autodoc')
+    app.setup_extension('sphinx.ext.autosummary')
+    app.setup_extension('sphinx.ext.mathjax')
+    app.setup_extension('sphinx.ext.viewcode')
+
+    app.add_source_suffix('.rst', 'restructuredtext', True)
+    app.add_source_suffix('.md', 'markdown', True)
+    app.add_source_suffix('.txt', 'markdown', True)
 
     # Add Sphinx message catalog for newer versions of Sphinx
     # See http://www.sphinx-doc.org/en/master/extdev/appapi.html#sphinx.application.Sphinx.add_message_catalog

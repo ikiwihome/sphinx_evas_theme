@@ -1,0 +1,40 @@
+# Minimal makefile for Sphinx documentation
+#
+
+# You can set these variables from the command line, and also
+# from the environment for the first two.
+SPHINXOPTS    ?=
+SPHINXBUILD   ?= sphinx-build
+SOURCEDIR     = source
+BUILDDIR      = _build
+
+# Put it first so that "make" without argument is like "make help".
+help:
+	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+.PHONY: help Makefile
+
+# Catch-all target: route all unknown targets to Sphinx using the new
+# "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
+%: Makefile
+	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+pdf:
+	@$(SPHINXBUILD) -M latex "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+	cd $(BUILDDIR)/latex && \
+	latexmk -r latexmkrc -pdf -f -dvi- -ps- -interaction=nonstopmode -g -quiet -dependents- -nodependents -rules- -outdir=../pdf
+	@echo PDF 文件保存在 $(BUILDDIR)\pdf 目录
+
+all:
+	@$(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+	@$(SPHINXBUILD) -M latex "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+	cd $(BUILDDIR)/latex && \
+	latexmk -r latexmkrc -pdf -f -dvi- -ps- -interaction=nonstopmode -quiet -dependents- -outdir=../pdf
+	@echo PDF 文件保存在 $(BUILDDIR)\pdf 目录
+
+clean:
+	rm -rf $(BUILDDIR)
+	@echo 已清空 $(BUILDDIR) 构建目录
