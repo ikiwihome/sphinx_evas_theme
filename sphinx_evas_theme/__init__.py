@@ -152,7 +152,6 @@ def setup(app: "Sphinx"):
     app.setup_extension('sphinx.ext.viewcode')
     app.setup_extension('sphinxcontrib.mermaid')
     app.setup_extension('sphinxcontrib.getthecode')
-    app.setup_extension('sphinxcontrib.drawio')
 
     app.add_source_suffix('.rst', 'restructuredtext', True)
     app.add_source_suffix('.md', 'markdown', True)
