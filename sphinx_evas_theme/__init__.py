@@ -21,6 +21,14 @@ __version_full__ = __version__
 
 logger = getLogger(__name__)
 
+
+
+def get_html_theme_path():
+    """Return list of HTML theme paths."""
+    cur_dir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+    return cur_dir
+
+
 def config_initiated(app: Sphinx, config: Config) -> None:
 
     theme_path = os.path.abspath(os.path.dirname(__file__))
@@ -142,18 +150,22 @@ def setup(app: "Sphinx"):
     # Add any Sphinx extension module names here, as strings. They can be
     # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
     # ones.
+    #app.setup_extension('recommonmark')
     app.setup_extension('myst_parser')
     app.setup_extension('sphinx_markdown_tables')
+    app.setup_extension('sphinx_markdown_checkbox')
     app.setup_extension('sphinx_copybutton')
+    #app.setup_extension('sphinx_design')
     app.setup_extension('sphinx.ext.intersphinx')
     app.setup_extension('sphinx.ext.autodoc')
     app.setup_extension('sphinx.ext.autosummary')
     app.setup_extension('sphinx.ext.mathjax')
     app.setup_extension('sphinx.ext.viewcode')
-    app.setup_extension('sphinxcontrib.mermaid')
-    app.setup_extension('sphinxcontrib.getthecode')
+    app.setup_extension('sphinx.ext.githubpages')
+    app.setup_extension('sphinx.ext.napoleon')
+    #app.setup_extension('sphinx_sitemap')
 
-    app.add_source_suffix('.rst', 'restructuredtext', True)
+    #app.add_source_suffix('.rst', 'restructuredtext', True)
     app.add_source_suffix('.md', 'markdown', True)
     app.add_source_suffix('.txt', 'markdown', True)
 
