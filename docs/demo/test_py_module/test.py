@@ -21,7 +21,7 @@ class Foo:
         They should be styled as a normal definition list.
 
     .. [1] A footnote contains body elements, consistently indented by at
-       least 3 spaces.
+       least 3 spaces [1]_.
 
     .. [Citation] A citation contains body elements, consistently indented by at
        least 3 spaces.
