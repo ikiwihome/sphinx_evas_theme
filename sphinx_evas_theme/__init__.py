@@ -86,6 +86,8 @@ def config_initiated(app: Sphinx, config: Config) -> None:
     if not config['master_doc']:
         config['master_doc'] = 'index'
 
+    config['myst_enable_extensions'] = ["colon_fence"]
+
     builder_name = Path(app.outdir).parts[-1]
     if builder_name == "pdf" or builder_name == "latex" or builder_name == "latexpdf":
         # read evas.sty from latex_templates and replace this new text
@@ -155,7 +157,7 @@ def setup(app: "Sphinx"):
     app.setup_extension('sphinx_markdown_tables')
     app.setup_extension('sphinx_markdown_checkbox')
     app.setup_extension('sphinx_copybutton')
-    #app.setup_extension('sphinx_design')
+    app.setup_extension('sphinx_design')
     app.setup_extension('sphinx.ext.intersphinx')
     app.setup_extension('sphinx.ext.autodoc')
     app.setup_extension('sphinx.ext.autosummary')
@@ -164,6 +166,7 @@ def setup(app: "Sphinx"):
     app.setup_extension('sphinx.ext.githubpages')
     app.setup_extension('sphinx.ext.napoleon')
     #app.setup_extension('sphinx_sitemap')
+    app.setup_extension('sphinx_togglebutton')
 
     #app.add_source_suffix('.rst', 'restructuredtext', True)
     app.add_source_suffix('.md', 'markdown', True)
