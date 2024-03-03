@@ -1,5 +1,5 @@
 sphinx >=5,<8
-sphinx_evas_theme >=0.7.0
+sphinx_evas_theme >=0.8.0
 docutils >=0.20
 sphinxcontrib-jquery >=4,<5
 sphinx_markdown_tables >=0.0.17
