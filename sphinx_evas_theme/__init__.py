@@ -15,7 +15,7 @@ from sphinx.locale import _
 from sphinx.util.logging import getLogger
 
 
-__version__ = '0.1.0'
+__version__ = '0.3.0'
 __version_full__ = __version__
 
 logger = getLogger(__name__)
@@ -101,7 +101,7 @@ def config_initiated(app, config):
         latex_package = latex_package.replace('<subtitle>', config.subtitle)
         latex_package = latex_package.replace('<draft_or_release>', config.draft_or_release)
 
-        if app.config.pdf_watermark is True:
+        if config.pdf_watermark is True:
             latex_package = latex_package.replace('<watermarktext>', config.watermarktext)
         else:
             latex_package = latex_package.replace('<watermarktext>', '')
@@ -148,7 +148,7 @@ def setup(app: "Sphinx"):
     app.add_html_theme('sphinx_evas_theme', os.path.abspath(os.path.dirname(__file__)))
     
     # add config value for this theme
-    app.add_config_value('subtitle', None, 'env', [str])
+    app.add_config_value('subtitle', "", 'env', [str])
     app.add_config_value('draft_or_release', u'Release', 'env', [str])
     app.add_config_value('watermarktext', u'EVAS Intelligence Confidential', 'env', [str])
     app.add_config_value('pdf_watermark', True, 'env', [bool])
