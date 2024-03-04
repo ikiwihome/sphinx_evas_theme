@@ -36,11 +36,11 @@ Sphinx EVAS Theme是一个为企业文档标准化而构建的sphinx主题，支
 
 HTML显示效果
 
-<img src="screenshot/html_preview1.png" style="zoom:50%;" />
+<img src="https://i.imgur.com/3K6DsXi.png" style="zoom:50%;" />
 
-<img src="screenshot/html_preview2.png" style="zoom:50%;" />
+<img src="https://i.imgur.com/Ft8T3YE.png" style="zoom:50%;" />
 
-<img src="screenshot/pdf_preview.png" style="zoom:50%;" />
+<img src="https://i.imgur.com/vbpzvqs.png" style="zoom:50%;" />
 
 
 
@@ -72,7 +72,7 @@ sphinx_evas_theme是基于sphinx创建的主题，而sphinx本身是一个python
 - `C:\texlive\bin\windows`
 - `C:\texlive\texmf-dist`
 
-<img src="screenshot/path_env.png" style="zoom:50%;" />
+<img src="https://i.imgur.com/HX7Etzq.png" style="zoom:50%;" />
 
 除此之外，本项目也支持Miktex，但在构建pdf时需要安装宏包，比较麻烦，不推荐。
 
@@ -126,7 +126,7 @@ pip install sphinx_evas_theme
 
 sphinx_evas_theme的使用非常简单，只需要在目标路径/文件夹下执行`evas`命令，即可创建sphinx_evas_theme项目模板
 
-<img src="screenshot/evas_init.png" style="zoom:50%;" />
+<img src="https://i.imgur.com/d5v0BXY.png" style="zoom:50%;" />
 
 
 ### 创建项目模板
@@ -175,7 +175,7 @@ make clean
 
 > windows下每次执行make命令时会自动检查环境，如果python, perl, xelatex, latexmk均OK，则会根据命令参数构建对应文档，否则会直接中断
 
-<img src="screenshot/env_check.png" style="zoom:50%;" />
+<img src="https://i.imgur.com/UDbotIV.png" style="zoom:50%;" />
 
 
 > 目前pdf封面左下角会显示evas版权信息，如果您需要修改，请自行fork此项目并在\sphinx_evas_theme\latex_templates\titlepage.tex 第45行修改版权信息
@@ -269,7 +269,7 @@ sphinx-autobuild source source/_build/html
 
 按照提示打开这个链接：http://127.0.0.1:8000
 
-<img src="screenshot/live_preview.png" style="zoom:50%;" />
+<img src="https://i.imgur.com/ekDOccW.png" style="zoom:50%;" />
 
 
 这样你在每次更改完markdown后，内容都会直接呈现在html网页中。
@@ -602,13 +602,13 @@ math角色和指令分别用于定义内联数学和块数学。
 要添加图像，请使用感叹号 (!), 然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。
 
 ``` markdown
-![这是图片](sphinx_evas_theme//templates/source/_static/philly-magic-garden.jpg "Magic Gardens")
+![这是图片](https://i.imgur.com/ECR4ET4.jpeg "Magic Gardens")
 
 
 ```
 显示效果
 
-![这是图片](sphinx_evas_theme//templates/source/_static/philly-magic-garden.jpg "Magic Gardens")
+![这是图片](https://i.imgur.com/ECR4ET4.jpeg "Magic Gardens")
 
 
 ---------------------
@@ -619,12 +619,12 @@ math角色和指令分别用于定义内联数学和块数学。
 插入图片Markdown语法代码：`![图片alt](图片链接 "图片标题")`
 
 ``` markdown
-[![这是图片](sphinx_evas_theme//templates/source/_static/philly-magic-garden.jpg "Magic Gardens")](https://markdown.com.cn)
+[![这是图片](https://i.imgur.com/ECR4ET4.jpeg "Magic Gardens")](https://markdown.com.cn)
 ```
 
 显示效果
 
-[![这是图片](sphinx_evas_theme//templates/source/_static/philly-magic-garden.jpg "Magic Gardens")](https://markdown.com.cn)
+[![这是图片](https://i.imgur.com/ECR4ET4.jpeg "Magic Gardens")](https://markdown.com.cn)
 
 ---------------------
 
