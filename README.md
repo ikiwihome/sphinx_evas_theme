@@ -1,3 +1,7 @@
+[![Pypi Version](https://img.shields.io/pypi/v/sphinx_evas_theme.svg)](https://pypi.python.org/pypi/sphinx_evas_theme)
+[![License](https://img.shields.io/pypi/l/sphinx_evas_theme.svg)](https://pypi.python.org/pypi/sphinx_evas_theme/)
+[![Documentation Status](https://readthedocs.org/projects/sphinx-evas-theme/badge/?version=latest)](http://sphinx-evas-theme.readthedocs.io/en/latest/?badge=latest)
+
 # 项目介绍
 
 Sphinx EVAS Theme是一个为企业文档标准化而构建的sphinx主题，支持html和pdf标准渲染输出。
@@ -8,7 +12,7 @@ Sphinx EVAS Theme是一个为企业文档标准化而构建的sphinx主题，支
 
 项目使用也相比sphinx以及其他主题更加简单，用户无需关注具体的sphinx以及主题配置参数，只需要填写文档元素例如标题，子标题，作者等信息，从而把精力专注在文档撰写上。
 
-- 具体的配置参数在evas命令生成的项目模板source/conf.py文件中，每个配置参数均已中文注释详细说明。
+> 具体的配置参数在evas命令生成的项目模板source/conf.py文件中，每个配置参数均已中文注释详细说明。
 
 用户通过简单的命令即可实现项目文档模板初始化(evas命令，取代sphinx-quickstart)、文档构建(make html, make pdf以及make all)工作。
 
@@ -19,9 +23,13 @@ Sphinx EVAS Theme是一个为企业文档标准化而构建的sphinx主题，支
 感谢下列开源项目为本项目提供支持
 
 [sphinx：开源文档构建工具](https://github.com/sphinx-doc/sphinx)
+
 [sphinx_rtd_theme：使用最为广泛的Sphinx主题](https://github.com/readthedocs/sphinx_rtd_theme)
+
 [sphinx_idf_theme：乐鑫科技的Sphinx主题](https://github.com/espressif/sphinx_idf_theme)
+
 [sphinx-jupyterbook-latex：支持LaTeX 输出的Sphinx扩展](https://github.com/executablebooks/sphinx-jupyterbook-latex)
+
 [esp-docs：乐鑫科技基于Sphinx开源文档构建环境](https://github.com/espressif/esp-docs)
 
 ## 效果预览
@@ -56,7 +64,7 @@ sphinx_evas_theme是基于sphinx创建的主题，而sphinx本身是一个python
 
 - Linux环境下不需要安装perl
 
-  
+
 
 由于Texlive自带了perl脚本环境，例如我的Texlive安装在了`C:\texlive`路径下，请将以下几个路径添加到windows path系统环境变量中：
 
@@ -64,7 +72,7 @@ sphinx_evas_theme是基于sphinx创建的主题，而sphinx本身是一个python
 - `C:\texlive\bin\windows`
 - `C:\texlive\texmf-dist`
 
-
+<img src="screenshot/path_env.png" style="zoom:50%;" />
 
 除此之外，本项目也支持Miktex，但在构建pdf时需要安装宏包，比较麻烦，不推荐。
 
@@ -88,7 +96,9 @@ sphinx_evas_theme是基于sphinx创建的主题，而sphinx本身是一个python
 
 sphinx_evas_theme托管在[PyPI](https://pypi.org/)中，通过python的pip安装：
 
-```pip install sphinx_evas_theme```
+``` python
+pip install sphinx_evas_theme
+```
 
 安装过程会将所有主题的依赖包一并安装。
 
@@ -191,4 +201,12 @@ make clean
     sphinx_togglebutton
 
 
+### 文档编写语言
 
+Sphinx EVAS Theme已经默认开启了reStructuredText和Markdown支持
+
+- 如果你更倾向于使用Markdown，请遵循MyST Markdown，初始模板中已提供示例，使用其他Markdown语法可能会导致html和pdf无法显示或者显示异常。
+
+    MyST Markdown语法请参考：https://mystmd.org/guide/typography
+
+- 如果你更倾向于使用reStructuredText，请参考reStructuredText语法。
