@@ -285,53 +285,6 @@ MyST Markdown MyST MyST（全称 Markedly Structured Text）专为 Sphinx 项目
 [MyST-Parser官网语法教程](https://myst-parser.readthedocs.io)
 
 
-## 提示框
-
-警告提示框（Admonition）突出显示与页面叙述稍有不同的特定文本块，例如注释或警告。
-
-``` markdown
-
-:::{tip}
-给读者一些有用的提示吧！
-:::
-
-:::{note}
-这是一个笔记
-:::
-
-
-:::{caution}
-这是一个警告
-:::
-
-:::{error}
-这是一个错误
-:::
-
-```
-
-
-显示效果
-
-:::{tip}
-给读者一些有用的提示吧！
-:::
-
-:::{note}
-这是一个笔记
-:::
-
-
-:::{caution}
-这是一个警告
-:::
-
-:::{error}
-这是一个错误
-:::
-
----------------------
-
 ## 标题
 
 为了兼容考虑，用一个空格在 `#` 和标题之间进行分隔。
@@ -594,23 +547,6 @@ print("Hello World!")
 
 ---------------------
 
-## 文件中的代码
-
-可以使用 literalinclude 指令从文件中包含更长的代码：
-
-``` markdown
-
-> ```{literalinclude} quickstart.py
-> ```
-
-```
-
-显示效果
-
-```{literalinclude} quickstart.py
-```
-
----------------------
 
 ## 数学公式
 
@@ -665,9 +601,9 @@ math角色和指令分别用于定义内联数学和块数学。
 要添加图像，请使用感叹号 (!), 然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。
 
 ``` markdown
-![这是图片](_static/philly-magic-garden.jpg "Magic Gardens")
+![这是图片](sphinx_evas_theme//templates/source/_static/philly-magic-garden.jpg "Magic Gardens")
 
-    ```{image} img/fun-fish.png
+    ```{image} _static/philly-magic-garden.jpg
     :alt: fishy
     :class: bg-primary
     :scale: 50 %
@@ -677,9 +613,9 @@ math角色和指令分别用于定义内联数学和块数学。
 ```
 显示效果
 
-![这是图片](_static/philly-magic-garden.jpg "Magic Gardens")
+![这是图片](sphinx_evas_theme//templates/source/_static/philly-magic-garden.jpg "Magic Gardens")
 
-```{image} _static/philly-magic-garden.jpg
+```{image} sphinx_evas_theme//templates/source/_static/philly-magic-garden.jpg
 :alt: philly magic garden
 :class: bg-primary
 :scale: 50 %
@@ -694,12 +630,12 @@ math角色和指令分别用于定义内联数学和块数学。
 插入图片Markdown语法代码：`![图片alt](图片链接 "图片标题")`
 
 ``` markdown
-[![这是图片](_static/philly-magic-garden.jpg "Magic Gardens")](https://markdown.com.cn)
+[![这是图片](sphinx_evas_theme//templates/source/_static/philly-magic-garden.jpg "Magic Gardens")](https://markdown.com.cn)
 ```
 
 显示效果
 
-[![这是图片](_static/philly-magic-garden.jpg "Magic Gardens")](https://markdown.com.cn)
+[![这是图片](sphinx_evas_theme//templates/source/_static/philly-magic-garden.jpg "Magic Gardens")](https://markdown.com.cn)
 
 ---------------------
 
@@ -717,53 +653,3 @@ math角色和指令分别用于定义内联数学和块数学。
 这是一个链接 [Markdown语法](https://markdown.com.cn)
 
 这是一个链接 [Markdown语法](https://markdown.com.cn "最好的markdown教程")
-
----------------------
-
-## 表格
-
-表格必须使用MyST Markdown格式，否则PDF无法显示
-
-list-table 指令用于根据统一的两级项目符号列表中的数据创建表格。 “统一”是指每个子列表（二级列表）必须包含相同数量的列表项。
-
-``` markdown
-:::{list-table} Frozen Delights!
-:widths: 15 10 30
-:header-rows: 1
-
-*   - Treat
-    - Quantity
-    - Description
-*   - Albatross
-    - 2.99
-    - On a stick!
-*   - Crunchy Frog
-    - 1.49
-    - If we took the bones out, it wouldn't be
- crunchy, now would it?
-*   - Gannet Ripple
-    - 1.99
-    - On a stick!
-:::
-```
-
-显示效果
-
-:::{list-table} Frozen Delights!
-:widths: 15 10 30
-:header-rows: 1
-
-*   - Treat
-    - Quantity
-    - Description
-*   - Albatross
-    - 2.99
-    - On a stick!
-*   - Crunchy Frog
-    - 1.49
-    - If we took the bones out, it wouldn't be
- crunchy, now would it?
-*   - Gannet Ripple
-    - 1.99
-    - On a stick!
-:::
