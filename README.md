@@ -284,6 +284,7 @@ MyST Markdown MyST MyST（全称 Markedly Structured Text）专为 Sphinx 项目
 
 [MyST-Parser官网语法教程](https://myst-parser.readthedocs.io)
 
+> 下方有部分MyST Markdown语法与Github Markdown语法不兼容，已省略，详细请安装后参考项目模板。
 
 ## 标题
 
@@ -603,24 +604,12 @@ math角色和指令分别用于定义内联数学和块数学。
 ``` markdown
 ![这是图片](sphinx_evas_theme//templates/source/_static/philly-magic-garden.jpg "Magic Gardens")
 
-    ```{image} _static/philly-magic-garden.jpg
-    :alt: fishy
-    :class: bg-primary
-    :scale: 50 %
-    :align: center
-    ```
 
 ```
 显示效果
 
 ![这是图片](sphinx_evas_theme//templates/source/_static/philly-magic-garden.jpg "Magic Gardens")
 
-```{image} sphinx_evas_theme//templates/source/_static/philly-magic-garden.jpg
-:alt: philly magic garden
-:class: bg-primary
-:scale: 50 %
-:align: center
-```
 
 ---------------------
 
