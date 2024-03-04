@@ -1,12 +1,1 @@
 sphinx >=5,<8
-sphinx_evas_theme >=0.8.0
-docutils >=0.20
-sphinxcontrib-jquery >=4,<5
-sphinx_markdown_tables >=0.0.17
-sphinx_copybutton >=0.5
-myst_parser >=2.0.0
-sphinx_design >=0.5.0
-sphinx-togglebutton >=0.3.2
-sphinx-markdown-checkbox >=0.1.0
-sphinxcontrib-mermaid >=0.9.2
-sphinxcontrib-getthecode >=1.2.1
