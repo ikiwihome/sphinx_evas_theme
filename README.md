@@ -210,3 +210,68 @@ Sphinx EVAS Theme已经默认开启了reStructuredText和Markdown支持
     MyST Markdown语法请参考：https://mystmd.org/guide/typography
 
 - 如果你更倾向于使用reStructuredText，请参考reStructuredText语法。
+
+
+## Sphinx EVAS Theme 目录结构
+
+``` python
+
+sphinx_evas_theme
+│
+├───docs                       # 主题示例文档
+│
+├───screenshot                 # README.md 图片
+│
+├───sphinx_evas_theme          # 主题主目录
+│   ├───latex_templates        # latex模板，包含导言和封面样式
+│   │   └───fonts              # pdf字体文件
+│   ├───locale                 # 国际化翻译，仅支持中文和英文
+│   │
+│   │
+│   ├───static                 # html js, css, logo
+│   │   ├───css                # html css样式
+│   │   │   └───fonts          # html字体文件
+│   │   └───js
+│   └───templates              # 项目模板，详见下一章
+│       └───source
+│           ├───_static
+│           └───_templates
+├───src                        # 暂时无用
+│
+└───tests                      # pytest 测试用例
+
+
+```
+
+
+## 项目模板目录结构
+
+``` python
+├───source             # 文档内容存放目录
+│   ├───_static        # 文档自定义html静态元素，如css,js存放目录，默认为空
+│   └───_templates     # 文档自定义html模板，如自定义页眉页脚等，默认为空，详细请参考Sphinx教程
+└───_build             # 构建目录，存放生成的文档
+    ├───doctrees
+    ├───html           # html生成路径
+    ├───latex          # 构建pdf中生成的latex目录
+    └───pdf            # pdf生成路径
+
+```
+
+
+# Live Preview 实时在线预览
+
+如果你想在编译文档时实时查看更改后的html，不必每次都重新make html，然后打开html，可以使用如下命令：
+
+``` cmd
+sphinx-autobuild source source/_build/html
+```
+
+按照提示打开这个链接：http://127.0.0.1:8000
+
+<img src="screenshot/live_preview.png" style="zoom:50%;" />
+
+
+这样你在每次更改完markdown后，内容都会直接呈现在html网页中。
+
+> 如果你使用的是VS Code进行MyST Markdown编写，强烈建议安装MyST-Markdown扩展，它支持语法高亮、实时预览
