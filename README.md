@@ -126,7 +126,7 @@ pip install sphinx_evas_theme
 
 sphinx_evas_theme的使用非常简单，只需要在目标路径/文件夹下执行`evas`命令，即可创建sphinx_evas_theme项目模板
 
-![evas_init.jpg](https://img2.imgtp.com/2024/03/05/k1e0vv6k.jpg)
+![](https://img2.imgtp.com/2024/03/05/Vu36a2Wk.gif)
 
 
 ### 创建项目模板
