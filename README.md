@@ -22,25 +22,25 @@ Sphinx EVAS Theme是一个为企业文档标准化而构建的sphinx主题，支
 
 感谢下列开源项目为本项目提供支持
 
-[sphinx：开源文档构建工具](https://github.com/sphinx-doc/sphinx)
+[sphinx](https://github.com/sphinx-doc/sphinx)：开源文档构建工具
 
-[sphinx_rtd_theme：使用最为广泛的Sphinx主题](https://github.com/readthedocs/sphinx_rtd_theme)
+[sphinx_rtd_theme](https://github.com/readthedocs/sphinx_rtd_theme)：使用最为广泛的Sphinx主题
 
-[sphinx_idf_theme：乐鑫科技的Sphinx主题](https://github.com/espressif/sphinx_idf_theme)
+[sphinx_idf_theme](https://github.com/espressif/sphinx_idf_theme)：乐鑫科技的Sphinx主题
 
-[sphinx-jupyterbook-latex：支持LaTeX 输出的Sphinx扩展](https://github.com/executablebooks/sphinx-jupyterbook-latex)
+[sphinx-jupyterbook-latex](https://github.com/executablebooks/sphinx-jupyterbook-latex)：支持LaTeX 输出的Sphinx扩展
 
-[esp-docs：乐鑫科技基于Sphinx开源文档构建环境](https://github.com/espressif/esp-docs)
+[esp-docs](https://github.com/espressif/esp-docs)：乐鑫科技基于Sphinx的开源文档构建环境
 
 ## 效果预览
 
 HTML显示效果
 
-<img src="https://i.imgur.com/3K6DsXi.png" style="zoom:50%;" />
+![html_preview1.jpg](https://img2.imgtp.com/2024/03/05/xayzjsff.jpg)
 
-<img src="https://i.imgur.com/Ft8T3YE.png" style="zoom:50%;" />
+![html_preview2.jpg](https://img2.imgtp.com/2024/03/05/LkdRYau0.jpg)
 
-<img src="https://i.imgur.com/vbpzvqs.png" style="zoom:50%;" />
+![pdf_preview.jpg](https://img2.imgtp.com/2024/03/05/V4hEokoH.jpg)
 
 
 
@@ -72,7 +72,7 @@ sphinx_evas_theme是基于sphinx创建的主题，而sphinx本身是一个python
 - `C:\texlive\bin\windows`
 - `C:\texlive\texmf-dist`
 
-<img src="https://i.imgur.com/HX7Etzq.png" style="zoom:50%;" />
+![path_env.jpg](https://img2.imgtp.com/2024/03/05/z21n94I8.jpg)
 
 除此之外，本项目也支持Miktex，但在构建pdf时需要安装宏包，比较麻烦，不推荐。
 
@@ -126,7 +126,7 @@ pip install sphinx_evas_theme
 
 sphinx_evas_theme的使用非常简单，只需要在目标路径/文件夹下执行`evas`命令，即可创建sphinx_evas_theme项目模板
 
-<img src="https://i.imgur.com/d5v0BXY.png" style="zoom:50%;" />
+![evas_init.jpg](https://img2.imgtp.com/2024/03/05/k1e0vv6k.jpg)
 
 
 ### 创建项目模板
@@ -145,6 +145,12 @@ make html
 
 > 构建好的html在 _build/html路径下，index.html为入口
 
+
+### 实时预览
+
+```
+sphinx-autobuild source source/_build/html
+```
 
 
 ### 创建pdf
@@ -175,7 +181,7 @@ make clean
 
 > windows下每次执行make命令时会自动检查环境，如果python, perl, xelatex, latexmk均OK，则会根据命令参数构建对应文档，否则会直接中断
 
-<img src="https://i.imgur.com/UDbotIV.png" style="zoom:50%;" />
+![env_check.jpg](https://img2.imgtp.com/2024/03/05/RTl0pN7m.jpg)
 
 
 > 目前pdf封面左下角会显示evas版权信息，如果您需要修改，请自行fork此项目并在\sphinx_evas_theme\latex_templates\titlepage.tex 第45行修改版权信息
@@ -261,7 +267,7 @@ sphinx_evas_theme
 
 # Live Preview 实时在线预览
 
-如果你想在编译文档时实时查看更改后的html，不必每次都重新make html，然后打开html，可以使用如下命令：
+如果你想在编辑文档时实时查看更改后的html，不必每次都重新make html，然后打开html，可以使用如下命令：
 
 ``` cmd
 sphinx-autobuild source source/_build/html
@@ -269,7 +275,7 @@ sphinx-autobuild source source/_build/html
 
 按照提示打开这个链接：http://127.0.0.1:8000
 
-<img src="https://i.imgur.com/ekDOccW.png" style="zoom:50%;" />
+![live_preview.jpg](https://img2.imgtp.com/2024/03/05/C6y8aiYN.jpg)
 
 
 这样你在每次更改完markdown后，内容都会直接呈现在html网页中。
@@ -602,13 +608,13 @@ math角色和指令分别用于定义内联数学和块数学。
 要添加图像，请使用感叹号 (!), 然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。
 
 ``` markdown
-![这是图片](https://i.imgur.com/ECR4ET4.jpeg "Magic Gardens")
+![philly-magic-garden.jpg](https://img2.imgtp.com/2024/03/05/DsxkvNn4.jpg)
 
 
 ```
 显示效果
 
-![这是图片](https://i.imgur.com/ECR4ET4.jpeg "Magic Gardens")
+![philly-magic-garden.jpg](https://img2.imgtp.com/2024/03/05/DsxkvNn4.jpg)
 
 
 ---------------------
@@ -619,12 +625,12 @@ math角色和指令分别用于定义内联数学和块数学。
 插入图片Markdown语法代码：`![图片alt](图片链接 "图片标题")`
 
 ``` markdown
-[![这是图片](https://i.imgur.com/ECR4ET4.jpeg "Magic Gardens")](https://markdown.com.cn)
+[![philly-magic-garden.jpg](https://img2.imgtp.com/2024/03/05/DsxkvNn4.jpg)](https://markdown.com.cn)
 ```
 
 显示效果
 
-[![这是图片](https://i.imgur.com/ECR4ET4.jpeg "Magic Gardens")](https://markdown.com.cn)
+[![philly-magic-garden.jpg](https://img2.imgtp.com/2024/03/05/DsxkvNn4.jpg)](https://markdown.com.cn)
 
 ---------------------
 
