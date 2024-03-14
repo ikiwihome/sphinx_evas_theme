@@ -50,7 +50,7 @@ def override_latex_config(app: Sphinx, config: Config) -> None:
 
         'papersize': 'a4paper',
 
-        'geometry': '\\usepackage{geometry}',
+        'geometry': '\\usepackage[twoside, asymmetric, left=2cm, right=2cm, top=2.54cm, bottom=2.54cm]{geometry}',
 
         # Latex figure (float) alignment
         'figure_align': 'htbp',
@@ -70,6 +70,7 @@ def override_latex_config(app: Sphinx, config: Config) -> None:
         'tableofcontents': r'''\pagestyle{normal}
     \sphinxtableofcontents''',
 
+        'extraclassoptions': 'openany,oneside',
     }
 
     # latex_elements = cast(dict, config["latex_elements"])
@@ -79,3 +80,5 @@ def override_latex_config(app: Sphinx, config: Config) -> None:
     config["latex_documents"] = [
     (app.config.master_doc, '{0}.tex'.format(slug), app.config.project, app.config.author, 'manual'),
     ]
+
+    config["latex_table_style"] = ['booktabs', 'colorrows']

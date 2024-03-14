@@ -18,19 +18,16 @@
 \usepackage{transparent}
 \usepackage{eso-pic}
 
-%%% Needed for displaying Chinese in English documentation
-\usepackage{xeCJK}
-
 %% spacing between line
 \usepackage{setspace}
-\singlespacing
+\setstretch{1.2}
+% \singlespacing
 
+%% table line space
+\renewcommand{\arraystretch}{1.5}
 
-\definecolor{myred}{RGB}{229, 32, 26}
 \definecolor{myblue}{RGB}{47, 85, 151}
 \definecolor{mygray}{RGB}{127, 127, 127}
-\definecolor{myblack}{RGB}{64, 64, 64}
-
 
 %%%%%%%%%%% datetime
 \usepackage{datetime}
@@ -55,7 +52,7 @@
     \fancyhead[L]{\@title}
     \fancyhead[R]{\leftmark}
     \fancyfoot[L]{\@author}
-    \fancyfoot[C]{\thepage \\ \href{https://www.evas.ai}{Submit Document Feedback}}
+    \fancyfoot[C]{\thepage}
     \fancyfoot[R]{\version}
     \renewcommand{\headrulewidth}{0.4pt}
     \renewcommand{\footrulewidth}{0.4pt}
@@ -99,7 +96,6 @@
 %%% Watermark setting
 %%%
 
-\usepackage{tcolorbox}
 \usepackage{background}
 \SetBgContents{
     \begin{tabular}{c}
