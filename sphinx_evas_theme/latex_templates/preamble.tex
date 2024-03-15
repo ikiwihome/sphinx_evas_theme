@@ -59,6 +59,15 @@
 }
 \makeatother
 
+% remove visible space and other symbols in line break
+\makeatletter
+\def\spx@verbatim@space {%
+     \nobreak\hskip\z@skip
+     \discretionary{}{}
+                   {\kern\fontdimen2\font}%
+}%
+\makeatother
+
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0.5pt}
 

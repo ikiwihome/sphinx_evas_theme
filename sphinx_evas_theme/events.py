@@ -48,7 +48,7 @@ def override_latex_config(app: Sphinx, config: Config) -> None:
 
         'papersize': 'a4paper',
 
-        'geometry': '\\usepackage[twoside, asymmetric, left=2cm, right=2cm, top=2.54cm, bottom=2.54cm]{geometry}',
+        'geometry': '\\usepackage[twoside, asymmetric, left=2cm, right=2cm, top=2.54cm, bottom=2cm]{geometry}',
 
         # Latex figure (float) alignment
         'figure_align': 'htbp',
@@ -77,4 +77,4 @@ def override_latex_config(app: Sphinx, config: Config) -> None:
     (app.config.master_doc, '{0}.tex'.format(slug), app.config.project, app.config.author, 'manual'),
     ]
 
-    config["latex_table_style"] = ['booktabs', 'colorrows']
+    config["latex_table_style"] = ['booktabs']
