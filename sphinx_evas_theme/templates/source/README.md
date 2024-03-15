@@ -8,7 +8,7 @@ Sphinx EVAS Theme是一个为企业文档标准化而构建的sphinx主题，支
 
 项目使用也相比sphinx以及其他主题更加简单，用户无需关注具体的sphinx以及主题配置参数，只需要填写文档元素例如标题，子标题，作者等信息，从而把精力专注在文档撰写上。
 
-> 具体的配置参数在evas命令生成的项目模板source/conf.py文件中，每个配置参数均已中文注释详细说明。
+- 具体的配置参数在evas命令生成的项目模板source/conf.py文件中，每个配置参数均已中文注释详细说明。
 
 用户通过简单的命令即可实现项目文档模板初始化(evas命令，取代sphinx-quickstart)、文档构建(make html, make pdf以及make all)工作。
 
@@ -73,7 +73,7 @@ sphinx_evas_theme是基于sphinx创建的主题，而sphinx本身是一个python
 
 - Texlive和python3在ubuntu环境一键安装命令:
 ``` bash
-apt-get install -y python3 latexmk texlive-latex-recommended texlive-fonts-recommended texlive-xetex fonts-freefont-otf fonts-lmodern texlive-lang-chinese
+apt-get install -y python3 python-is-python3 latexmk texlive-latex-recommended texlive-fonts-recommended texlive-xetex fonts-freefont-otf fonts-lmodern texlive-lang-chinese
 ```
 
 - Linux环境下不需要安装perl
@@ -104,10 +104,12 @@ apt-get install -y python3 latexmk texlive-latex-recommended texlive-fonts-recom
 
 在上述环境安装完成后，请在windows cmd命令行或者linux终端中运行如下几个命令，如果没有显示错误，则代表环境安装完毕
 
-- windows下输入`python`， linux下输入`python3`
+- python
 
 - xelatex
+
 - latexmk
+
 - perl (仅windows)
 
 
@@ -131,7 +133,7 @@ pip install sphinx_evas_theme
 ``` python
 pip install venv
 
-python -m venv venv  # linux下为python3 -m venv venv
+python -m venv venv
 
 \venv\Scripts\activate.bat   # windows环境下
 
@@ -155,7 +157,7 @@ sphinx_evas_theme的使用非常简单，只需要在目标路径/文件夹下�
 
 ### 创建项目模板
 
-```shell
+```
 evas
 ```
 
@@ -219,19 +221,19 @@ make clean
 
 引入的扩展有：
 
-    myst_parser
-    sphinx_markdown_tables
-    sphinx_markdown_checkbox
-    sphinx_copybutton
-    sphinx_design
-    sphinx.ext.intersphinx
-    sphinx.ext.autodoc
-    sphinx.ext.autosummary
-    sphinx.ext.mathjax
-    sphinx.ext.viewcode
-    sphinx.ext.githubpages
-    sphinx.ext.napoleon
-    sphinx_togglebutton
+- myst_parser
+- sphinx_markdown_tables
+- sphinx_markdown_checkbox
+- sphinx_copybutton
+- sphinx_design
+- sphinx.ext.intersphinx
+- sphinx.ext.autodoc
+- sphinx.ext.autosummary
+- sphinx.ext.mathjax
+- sphinx.ext.viewcode
+- sphinx.ext.githubpages
+- sphinx.ext.napoleon
+- sphinx_togglebutton
 
 
 ### 文档编写语言
