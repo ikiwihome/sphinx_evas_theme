@@ -71,7 +71,7 @@ sphinx_evas_theme是基于sphinx创建的主题，而sphinx本身是一个python
 - Texlive 2023 (Windows)下载地址：\
 [https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/texlive2023-20230313.iso](https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/texlive2023-20230313.iso)
 
-- Texlive和python3在ubuntu环境一键安装命令： \
+- Texlive和python3在ubuntu环境一键安装命令:
 ``` bash
 apt-get install -y python3 latexmk texlive-latex-recommended texlive-fonts-recommended texlive-xetex fonts-freefont-otf fonts-lmodern texlive-lang-chinese`
 ```
