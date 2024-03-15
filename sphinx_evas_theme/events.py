@@ -77,4 +77,4 @@ def override_latex_config(app: Sphinx, config: Config) -> None:
     (app.config.master_doc, '{0}.tex'.format(slug), app.config.project, app.config.author, 'manual'),
     ]
 
-    config["latex_table_style"] = ['booktabs']
+    config["latex_table_style"] = []
