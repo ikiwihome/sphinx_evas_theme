@@ -54,13 +54,17 @@ sphinx_evas_theme是基于sphinx创建的主题，而sphinx本身是一个python
 
 具体python的安装方式请参考官网以及其他教程，python安装完后会自动将python根目录以及Scripts目录添加到path系统环境变量中：
 
-- python官网：https://www.python.org/
+- python官网：[https://www.python.org](https://www.python.org)
 
 在构建pdf时，由于sphinx使用了latex语言作为中间语言，而编译latex需要latex编译环境，推荐安装texlive完整版。
 
-- Texlive 2023 (Windows)下载地址：https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/texlive2023-20230313.iso
+- Texlive 2023 (Windows)下载地址：\
+[https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/texlive2023-20230313.iso](https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/texlive2023-20230313.iso)
 
-- Texlive和python3在ubuntu环境一键安装命令： `apt-get install -y python3 latexmk texlive-latex-recommended texlive-fonts-recommended texlive-xetex fonts-freefont-otf fonts-lmodern texlive-lang-chinese`
+- Texlive和python3在ubuntu环境一键安装命令： \
+``` bash
+apt-get install -y python3 latexmk texlive-latex-recommended texlive-fonts-recommended texlive-xetex fonts-freefont-otf fonts-lmodern texlive-lang-chinese`
+```
 
 - Linux环境下不需要安装perl
 
@@ -76,15 +80,16 @@ sphinx_evas_theme是基于sphinx创建的主题，而sphinx本身是一个python
 
 除此之外，本项目也支持Miktex，但在构建pdf时需要安装宏包，比较麻烦，不推荐。
 
-- MikTex下载地址：https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/win32/miktex/setup/windows-x64/basic-miktex-24.1-x64.exe
+- MikTex下载地址：\
+[https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/win32/miktex/setup/windows-x64/basic-miktex-24.1-x64.exe](https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/win32/miktex/setup/windows-x64/basic-miktex-24.1-x64.exe)
 - MikTex需要单独安装perl脚本环境
-  - perl下载地址：https://strawberryperl.com/
+  - perl下载地址：[https://strawberryperl.com](https://strawberryperl.com)
 
 
 
 在上述环境安装完成后，请在windows cmd命令行或者linux终端中运行如下几个命令，如果没有显示错误，则代表环境安装完毕
 
-- windows下输入python， linux下输入python3
+- windows下输入`python`， linux下输入`python3`
 
 - xelatex
 - latexmk
