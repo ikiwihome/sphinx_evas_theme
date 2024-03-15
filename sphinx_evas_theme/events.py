@@ -25,17 +25,15 @@ def override_latex_config(app: Sphinx, config: Config) -> None:
         os.path.join(theme_path, 'latex_templates', 'fonts', 'SourceHanSansSC-Regular.otf')
         ]
 
-    fontpkg = r'''
-    \usepackage[UTF8]{ctex}
+    fontpkg = r'''\usepackage[UTF8]{ctex}
+\setCJKmainfont{SourceHanSansSC-Regular.otf}[AutoFakeBold,AutoFakeSlant]
+\setCJKsansfont{SourceHanSansSC-Regular.otf}[AutoFakeBold,AutoFakeSlant]
+\setCJKmonofont{SourceHanSansSC-Regular.otf}[AutoFakeBold,AutoFakeSlant]
 
-    \setCJKmainfont{SourceHanSansSC-Regular.otf}[AutoFakeBold,AutoFakeSlant]
-    \setCJKsansfont{SourceHanSansSC-Regular.otf}[AutoFakeBold,AutoFakeSlant]
-    \setCJKmonofont{SourceHanSansSC-Regular.otf}[AutoFakeBold,AutoFakeSlant]
-
-    \setmainfont{DejaVuSans.ttf}[AutoFakeBold,AutoFakeSlant]
-    \setsansfont{DejaVuSans.ttf}[AutoFakeBold,AutoFakeSlant]
-    \setmonofont{DejaVuSans.ttf}[AutoFakeBold,AutoFakeSlant]
-    '''
+\setmainfont{DejaVuSans.ttf}[AutoFakeBold,AutoFakeSlant]
+\setsansfont{DejaVuSans.ttf}[AutoFakeBold,AutoFakeSlant]
+\setmonofont{DejaVuSans.ttf}[AutoFakeBold,AutoFakeSlant]
+'''
 
     preamble = ''
     with open(os.path.join(theme_path, 'latex_templates', 'preamble.tex')) as f:
@@ -70,10 +68,8 @@ def override_latex_config(app: Sphinx, config: Config) -> None:
         'tableofcontents': r'''\pagestyle{normal}
     \sphinxtableofcontents''',
 
-        'extraclassoptions': 'openany,oneside',
+        'extraclassoptions': 'openany,oneside,fleqn',
     }
-
-    # latex_elements = cast(dict, config["latex_elements"])
 
     slug = re.sub(r'\W+', '-', app.config.project.lower())
 
