@@ -73,7 +73,7 @@ sphinx_evas_theme是基于sphinx创建的主题，而sphinx本身是一个python
 
 - Texlive和python3在ubuntu环境一键安装命令:
 ``` bash
-apt-get install -y python3 latexmk texlive-latex-recommended texlive-fonts-recommended texlive-xetex fonts-freefont-otf fonts-lmodern texlive-lang-chinese`
+apt-get install -y python3 latexmk texlive-latex-recommended texlive-fonts-recommended texlive-xetex fonts-freefont-otf fonts-lmodern texlive-lang-chinese
 ```
 
 - Linux环境下不需要安装perl
