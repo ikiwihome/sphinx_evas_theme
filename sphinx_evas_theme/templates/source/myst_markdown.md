@@ -461,9 +461,9 @@ list-table 指令用于根据统一的两级项目符号列表中的数据创建
 :widths: 15 10 30
 :header-rows: 1
 
-*   - Treat
-    - Quantity
-    - Description
+*   - **Treat**
+    - **Quantity**
+    - **Description**
 *   - Albatross
     - 2.99
     - On a stick!
