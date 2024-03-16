@@ -375,8 +375,8 @@ math角色和指令分别用于定义内联数学和块数学。
 ``` markdown
 ![这是图片](_static/philly-magic-garden.jpg "Magic Gardens")
 
-    ```{image} img/fun-fish.png
-    :alt: fishy
+    ```{image} _static/philly-magic-garden.jpg
+    :alt: philly magic garden
     :class: bg-primary
     :scale: 50 %
     :align: center
