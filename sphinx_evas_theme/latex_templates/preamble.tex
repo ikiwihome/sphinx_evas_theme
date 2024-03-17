@@ -127,9 +127,10 @@
 \newcommand{\chapterquote}[2]{\epigraphhead[60]{\epigraph{\textit{#1}}{\textbf {\textit{--#2}}}}}
 %%%%%%%%%%% Quote for all places except Chapter
 \newcommand{\sectionquote}[2]{{\quote{\textit{``#1''}}{\textbf {\textit{--#2}}}}}
+\AtBeginEnvironment{quote}{\slshape\par\singlespacing}
 
 % Insert 22pt white space before roc title. \titlespacing at line 65 changes it by -22 later on.
-\renewcommand*\contentsname{\hspace{0pt}Contents}
+\renewcommand*\contentsname{\hspace{0pt}Table of Content}
 
 
 % Define section, subsection and subsubsection font size and color
