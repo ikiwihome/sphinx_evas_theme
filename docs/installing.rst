@@ -50,7 +50,7 @@ How to upgrade
 Adding ``sphinx-evas-theme`` to your project's dependencies will make pip install the latest compatible version of the theme.
 
 If you want to test a **pre-release**, you need to be explicit about the version you specify.
-Otherwise, pip will ignore pre-releases. Add for instance ``sphinx-evas-theme==1.3.0`` to test a pre-release.
+Otherwise, pip will ignore pre-releases. Add for instance ``sphinx-evas-theme==1.4.0`` to test a pre-release.
 
 .. tip::
     We recommend that you pin the version of Sphinx that your project is built with.
