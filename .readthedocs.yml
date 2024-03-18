@@ -12,7 +12,7 @@ python:
       path: .
 
 sphinx:
-  configuration: docs/conf.py
+  configuration: sphinx_evas_theme/source/conf.py
 
 formats:
   - pdf
