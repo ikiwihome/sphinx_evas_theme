@@ -7,7 +7,7 @@ build:
 
 python:
   install:
-    - requirements: docs/requirements.txt
+    - requirements: sphinx_evas_theme/templates/requirements.txt
     - method: pip
       path: .
 
