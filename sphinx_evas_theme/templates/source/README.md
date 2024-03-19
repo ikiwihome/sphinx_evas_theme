@@ -131,7 +131,7 @@ pip install sphinx_evas_theme
 在venv python虚拟环境下安装的命令如下，先新建一个空文件夹，然后在文件夹中输入：
 
 ``` python
-pip install venv
+pip install virtualenv
 
 python -m venv venv
 
