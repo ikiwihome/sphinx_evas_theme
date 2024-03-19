@@ -50,7 +50,9 @@
 \fancypagestyle{normal}{
     \fancyhf{}
     \fancyhead[L]{\@title}
-    \fancyhead[R]{\thechapter.\leftmark}
+    \ifthenelse{\equal{\thechapter}{0}}
+    {\fancyhead[R]{\leftmark}}
+    {\fancyhead[R]{\thechapter.\leftmark}}
     \fancyfoot[L]{\@author}
     \fancyfoot[C]{\thepage}
     \fancyfoot[R]{\version}
@@ -92,10 +94,10 @@
 }
 
 
-\RequirePackage{tocbibind} %%% comment this to remove page number for following
-\addto\captionsenglish{\renewcommand{\contentsname}{Table of contents}}
-\addto\captionsenglish{\renewcommand{\listfigurename}{List of figures}}
-\addto\captionsenglish{\renewcommand{\listtablename}{List of tables}}
+% \RequirePackage{tocbibind} %%% comment this to remove page number for following
+% \addto\captionsenglish{\renewcommand{\contentsname}{Table of contents}}
+% \addto\captionsenglish{\renewcommand{\listfigurename}{List of figures}}
+% \addto\captionsenglish{\renewcommand{\listtablename}{List of tables}}
 % \addto\captionsenglish{\renewcommand{\chaptername}{Chapter}}
 
 
@@ -122,44 +124,38 @@
 \setlist{nosep}
 
 %%%%%%%%%%% Quote Styles at the top of chapter
-\usepackage{epigraph}
-\setlength{\epigraphwidth}{0.8\columnwidth}
-\newcommand{\chapterquote}[2]{\epigraphhead[60]{\epigraph{\textit{#1}}{\textbf {\textit{--#2}}}}}
+%\usepackage{epigraph}
+%\setlength{\epigraphwidth}{0.8\columnwidth}
+%\newcommand{\chapterquote}[2]{\epigraphhead[60]{\epigraph{\textit{#1}}{\textbf {\textit{--#2}}}}}
 %%%%%%%%%%% Quote for all places except Chapter
-\newcommand{\sectionquote}[2]{{\quote{\textit{``#1''}}{\textbf {\textit{--#2}}}}}
+%\newcommand{\sectionquote}[2]{{\quote{\textit{``#1''}}{\textbf {\textit{--#2}}}}}
 \AtBeginEnvironment{quote}{\slshape\par\singlespacing}
 
 % Insert 22pt white space before roc title. \titlespacing at line 65 changes it by -22 later on.
-\renewcommand*\contentsname{\hspace{0pt}Table of Content}
-
-
-% Define section, subsection and subsubsection font size and color
-\usepackage{sectsty}
-\definecolor{AllportsColor}{HTML}{000000}
-\allsectionsfont{\color{AllportsColor}}
+% \renewcommand*\contentsname{\hspace{0pt}Table of Contents}
 
 \usepackage{ctex}
 \usepackage{titlesec}
 \titleformat{\chapter}
-{\color{AllportsColor}\LARGE\bfseries}{\thechapter.}{1em}{}
+{\normalcolor\LARGE\bfseries}{\thechapter.}{1em}{}
 
 \titleformat{\section}
-{\color{AllportsColor}\LARGE\bfseries}{\thesection.}{1em}{}
+{\normalcolor\LARGE\bfseries}{\thesection.}{1em}{}
 
 \titleformat{\subsection}
-{\color{AllportsColor}\Large\bfseries}{\thesubsection.}{1em}{}
+{\normalcolor\Large\bfseries}{\thesubsection.}{1em}{}
 
 \titleformat{\subsubsection}
-{\color{AllportsColor}\large\bfseries}{\thesubsubsection.}{1em}{}
+{\normalcolor\large\bfseries}{\thesubsubsection.}{1em}{}
 
 \titleformat{\paragraph}
-{\color{AllportsColor}\large\bfseries}{\theparagraph}{1em}{}
+{\normalcolor\large\bfseries}{\theparagraph}{1em}{}
 
 \titleformat{\subparagraph}
-{\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+{\normalcolor\normalsize\bfseries}{\thesubparagraph}{1em}{}
 
 \titleformat{\subsubparagraph}
-{\normalfont\normalsize\bfseries}{\thesubsubparagraph}{1em}{}
+{\normalcolor\normalsize\bfseries}{\thesubsubparagraph}{1em}{}
 
 \assignpagestyle{\chapter}{normal}
 
