@@ -1,6 +1,6 @@
 # MyST Markdown 语法入门
 
-MyST Markdown MyST MyST（全称 Markedly Structured Text）专为 Sphinx 项目使用而设计的 Markdown 风格。 它是 CommonMark Markdown 和一些额外的语法片段的组合，以支持 Sphinx 的功能，因此您可以用纯 Markdown 编写 Sphinx 文档。
+MyST Markdown, MyST（全称 Markedly Structured Text）专为 Sphinx 项目使用而设计的 Markdown 风格。 它是 CommonMark Markdown 和一些额外的语法片段的组合，以支持 Sphinx 的功能，因此您可以用纯 Markdown 编写 Sphinx 文档。
 
 [MyST-Parser官网语法教程](https://myst-parser.readthedocs.io)
 
