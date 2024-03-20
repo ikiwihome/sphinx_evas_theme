@@ -14,6 +14,14 @@
 %%% it is used "\addtocontents{toc}{\vskip -1.2cm}" etc. in the document
 \usepackage[notlot,nottoc,notlof]{}
 
+% Optimize the display effect
+\usepackage{microtype}
+
+% Set all the text contents align to left
+\usepackage{ragged2e}  
+\setlength{\RaggedRightRightskip}{0pt plus 3em}
+\RaggedRight
+
 \usepackage{color}
 \usepackage{transparent}
 \usepackage{eso-pic}
@@ -42,6 +50,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 
+% Set chapter text with number
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 
 % Header and footer
@@ -50,9 +59,7 @@
 \fancypagestyle{normal}{
     \fancyhf{}
     \fancyhead[L]{\@title}
-    \ifthenelse{\equal{\thechapter}{0}}
-    {\fancyhead[R]{\leftmark}}
-    {\fancyhead[R]{\thechapter.\leftmark}}
+    \fancyhead[R]{\ifnum\thechapter=0 \leftmark \else \thechapter.\leftmark \fi}
     \fancyfoot[L]{\@author}
     \fancyfoot[C]{\thepage}
     \fancyfoot[R]{\version}
@@ -69,21 +76,24 @@
 }%
 \makeatother
 
+% Set the header and footer divider thickness
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0.5pt}
 
-\setlength{\headheight}{12.07004pt}
-\addtolength{\topmargin}{-0.07004pt}
+% Set Margins
+\setlength{\headheight}{12.12004pt}
+\setlength{\headsep}{10mm}
+\addtolength{\topmargin}{-0.12004pt}
 
 % Define a spacing for section, subsection and subsubsection
 % http://tex.stackexchange.com/questions/108684/spacing-before-and-after-section-titles
 
-\titlespacing*{\chapter}{0pt}{6pt plus 0pt minus 0pt}{6pt plus 0pt minus 0pt}
+\titlespacing*{\chapter}{0pt}{-30pt plus 0pt minus 0pt}{6pt plus 0pt minus 0pt}
 \titlespacing*{\section}{0pt}{6pt plus 0pt minus 0pt}{6pt plus 0pt minus 0pt}
-\titlespacing*{\subsection}{0pt}{18pt plus 64pt minus 0pt}{0pt}
-\titlespacing*{\subsubsection}{0pt}{12pt plus 0pt minus 0pt}{0pt}
-\titlespacing*{\paragraph}    {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
-\titlespacing*{\subparagraph} {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{6pt plus 0pt minus 0pt}{6pt plus 0pt minus 0pt}
+\titlespacing*{\subsubsection}{0pt}{6pt plus 0pt minus 0pt}{6pt plus 0pt minus 0pt}
+\titlespacing*{\paragraph}{0pt}{0pt plus 0pt minus 0pt}{0pt plus 0pt minus 0pt}
+\titlespacing*{\subparagraph}{0pt}{0pt plus 0pt minus 0pt}{0pt plus 0pt minus 0pt}
 
 % Define the colors of Hyperlinks
 \hypersetup{
@@ -94,12 +104,17 @@
 	citecolor=black,
 }
 
-
-% \RequirePackage{tocbibind} %%% comment this to remove page number for following
-% \addto\captionsenglish{\renewcommand{\contentsname}{Table of contents}}
-% \addto\captionsenglish{\renewcommand{\listfigurename}{List of figures}}
-% \addto\captionsenglish{\renewcommand{\listtablename}{List of tables}}
-% \addto\captionsenglish{\renewcommand{\chaptername}{Chapter}}
+% Define some content name to chinese
+\addto\captionsenglish{
+    \renewcommand{\contentsname}{目录}
+    \renewcommand{\listfigurename}{插图目录}
+    \renewcommand{\listtablename}{表格目录}
+    \renewcommand{\refname}{参考文献}
+    \renewcommand{\abstractname}{摘要}
+    \renewcommand{\indexname}{索引}
+    \renewcommand{\tablename}{表}
+    \renewcommand{\figurename}{图}
+}
 
 
 %%%
@@ -132,21 +147,18 @@
 %\newcommand{\sectionquote}[2]{{\quote{\textit{``#1''}}{\textbf {\textit{--#2}}}}}
 \AtBeginEnvironment{quote}{\slshape\par\singlespacing}
 
-% Insert 22pt white space before roc title. \titlespacing at line 65 changes it by -22 later on.
-% \renewcommand*\contentsname{\hspace{0pt}Table of Contents}
-
 \usepackage{titlesec}
 \titleformat{\chapter}
-{\normalcolor\LARGE\bfseries}{\thechapter.}{1em}{}
+{\normalcolor\LARGE\bfseries}{\thechapter.}{0.2em}{}
 
 \titleformat{\section}
-{\normalcolor\LARGE\bfseries}{\thesection.}{1em}{}
+{\normalcolor\LARGE\bfseries}{\thesection.}{0.2em}{}
 
 \titleformat{\subsection}
-{\normalcolor\Large\bfseries}{\thesubsection.}{1em}{}
+{\normalcolor\Large\bfseries}{\thesubsection.}{0.2em}{}
 
 \titleformat{\subsubsection}
-{\normalcolor\large\bfseries}{\thesubsubsection.}{1em}{}
+{\normalcolor\large\bfseries}{\thesubsubsection.}{0.2em}{}
 
 \titleformat{\paragraph}
 {\normalcolor\large\bfseries}{\theparagraph}{1em}{}

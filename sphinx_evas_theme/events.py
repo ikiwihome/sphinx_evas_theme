@@ -48,7 +48,7 @@ def override_latex_config(app: Sphinx, config: Config) -> None:
 
         'papersize': 'a4paper',
 
-        'geometry': '\\usepackage[twoside, asymmetric, left=2cm, right=2cm, top=2.54cm, bottom=2cm]{geometry}',
+        'geometry': '\\usepackage[left=2cm, right=2cm, top=2.54cm, bottom=2.54cm]{geometry}',
 
         # Latex figure (float) alignment
         'figure_align': 'htbp',
@@ -68,7 +68,7 @@ def override_latex_config(app: Sphinx, config: Config) -> None:
         'tableofcontents': r'''\pagestyle{normal}
     \sphinxtableofcontents''',
 
-        'extraclassoptions': 'openany,oneside,fleqn',
+        'extraclassoptions': 'openany,fleqn',
     }
 
     slug = re.sub(r'\W+', '-', app.config.project.lower())
