@@ -124,29 +124,25 @@
 \usepackage{background}
 \SetBgContents{
     \begin{tabular}{c}
-        \hspace{-10cm}	\watermarktext \\
+        \hspace{-5cm}	\watermarktext \\
         \vspace{6cm}                  \\
-        \hspace{6cm}	\watermarktext   \\
+        \hspace{10cm}	\watermarktext   \\
         \vspace{6cm}                  \\
-        \hspace{-6cm}	\watermarktext
+        \hspace{-10cm}	\watermarktext
         \vspace{6cm}                  \\
-        \hspace{10cm}	\watermarktext
+        \hspace{15cm}	\watermarktext
     \end{tabular}\hfill}
 \SetBgScale{1}
 \SetBgAngle{45}
 
-%%reduce spacing for itemize
+% reduce spacing for itemize
 \usepackage{enumitem}
 \setlist{nosep}
 
-%%%%%%%%%%% Quote Styles at the top of chapter
-%\usepackage{epigraph}
-%\setlength{\epigraphwidth}{0.8\columnwidth}
-%\newcommand{\chapterquote}[2]{\epigraphhead[60]{\epigraph{\textit{#1}}{\textbf {\textit{--#2}}}}}
-%%%%%%%%%%% Quote for all places except Chapter
-%\newcommand{\sectionquote}[2]{{\quote{\textit{``#1''}}{\textbf {\textit{--#2}}}}}
+% Quote Styles
 \AtBeginEnvironment{quote}{\slshape\par\singlespacing}
 
+% space between digit and title
 \usepackage{titlesec}
 \titleformat{\chapter}
 {\normalcolor\LARGE\bfseries}{\thechapter.}{0.2em}{}

@@ -21,7 +21,6 @@ def override_latex_config(app: Sphinx, config: Config) -> None:
     config["latex_logo"] = os.path.join(theme_path, 'latex_templates', 'logo.pdf')
     config["latex_engine"] = "xelatex"
     config["latex_additional_files"] = [
-        os.path.join(theme_path, 'latex_templates', 'fonts', 'DejaVuSans.ttf'),
         os.path.join(theme_path, 'latex_templates', 'fonts', 'SourceHanSansSC-Regular.otf')
         ]
 
@@ -30,9 +29,9 @@ def override_latex_config(app: Sphinx, config: Config) -> None:
 \setCJKsansfont{SourceHanSansSC-Regular.otf}[AutoFakeBold,AutoFakeSlant]
 \setCJKmonofont{SourceHanSansSC-Regular.otf}[AutoFakeBold,AutoFakeSlant]
 
-\setmainfont{DejaVuSans.ttf}[AutoFakeBold,AutoFakeSlant]
-\setsansfont{DejaVuSans.ttf}[AutoFakeBold,AutoFakeSlant]
-\setmonofont{DejaVuSans.ttf}[AutoFakeBold,AutoFakeSlant]
+\setmainfont{DejaVu Sans}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans}
 '''
 
     preamble = ''
@@ -57,6 +56,10 @@ def override_latex_config(app: Sphinx, config: Config) -> None:
 
         # Additional stuff for the LaTeX preamble.
         'fncychap': '\\usepackage[Sonny]{fncychap}',
+
+        'cmappkg': '',
+        
+        'fontenc': '\\usepackage[T1]{fontenc}',
 
         'fontpkg':  fontpkg,
 
