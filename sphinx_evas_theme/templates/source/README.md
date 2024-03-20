@@ -135,7 +135,7 @@ pip install virtualenv
 
 python -m venv venv
 
-\venv\Scripts\activate.bat   # windows环境下
+.\venv\Scripts\activate.bat   # windows环境下
 
 source venv/bin/activate    # linux环境下
 

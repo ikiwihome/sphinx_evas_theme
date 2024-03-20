@@ -25,7 +25,7 @@ def override_latex_config(app: Sphinx, config: Config) -> None:
         os.path.join(theme_path, 'latex_templates', 'fonts', 'SourceHanSansSC-Regular.otf')
         ]
 
-    fontpkg = r'''\usepackage[UTF8]{ctex}
+    fontpkg = r'''\usepackage[UTF8, fontset=none]{ctex}
 \setCJKmainfont{SourceHanSansSC-Regular.otf}[AutoFakeBold,AutoFakeSlant]
 \setCJKsansfont{SourceHanSansSC-Regular.otf}[AutoFakeBold,AutoFakeSlant]
 \setCJKmonofont{SourceHanSansSC-Regular.otf}[AutoFakeBold,AutoFakeSlant]
