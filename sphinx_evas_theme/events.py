@@ -21,17 +21,21 @@ def override_latex_config(app: Sphinx, config: Config) -> None:
     config["latex_logo"] = os.path.join(theme_path, 'latex_templates', 'logo.pdf')
     config["latex_engine"] = "xelatex"
     config["latex_additional_files"] = [
+        os.path.join(theme_path, 'latex_templates', 'fonts', 'DejaVuSans.ttf'),
+        os.path.join(theme_path, 'latex_templates', 'fonts', 'DejaVuSans-Bold.ttf'),
         os.path.join(theme_path, 'latex_templates', 'fonts', 'SourceHanSansSC-Regular.otf')
         ]
 
     fontpkg = r'''\usepackage[UTF8, fontset=none]{ctex}
+\usepackage{fontspec}
+
+\setmainfont{DejaVuSans.ttf}[BoldFont=DejaVuSans-Bold.ttf, AutoFakeSlant]
+\setsansfont{DejaVuSans.ttf}[BoldFont=DejaVuSans-Bold.ttf, AutoFakeSlant]
+\setmonofont{DejaVuSans.ttf}[BoldFont=DejaVuSans-Bold.ttf, AutoFakeSlant]
+
 \setCJKmainfont{SourceHanSansSC-Regular.otf}[AutoFakeBold,AutoFakeSlant]
 \setCJKsansfont{SourceHanSansSC-Regular.otf}[AutoFakeBold,AutoFakeSlant]
 \setCJKmonofont{SourceHanSansSC-Regular.otf}[AutoFakeBold,AutoFakeSlant]
-
-\setmainfont{DejaVu Sans}
-\setsansfont{DejaVu Sans}
-\setmonofont{DejaVu Sans}
 '''
 
     preamble = ''
@@ -58,7 +62,7 @@ def override_latex_config(app: Sphinx, config: Config) -> None:
         'fncychap': '\\usepackage[Sonny]{fncychap}',
 
         'cmappkg': '',
-        
+
         'fontenc': '\\usepackage[T1]{fontenc}',
 
         'fontpkg':  fontpkg,
