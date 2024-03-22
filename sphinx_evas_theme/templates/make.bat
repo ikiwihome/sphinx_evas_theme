@@ -1,8 +1,16 @@
 @echo off
-chcp 65001 > NUL 2>&1
+
+for /f "tokens=2 delims=:" %%A in ('chcp') do (set "_cod_page=%%A")
+
+if NOT "%_cod_page%"=="65001" (
+    chcp 65001 > NUL 2>&1
+)
 
 setlocal
 pushd %~dp0
+
+set PARENT_DIR=%~dp0..
+set PATH=%PARENT_DIR%\env\texlive\bin\windows;%PARENT_DIR%\env\texlive\tlpkg\tlperl\bin;%PARENT_DIR%\env\python;%PATH%
 
 set ENV_FAIL=0
 
@@ -78,7 +86,7 @@ goto end
 
 cd %BUILDDIR%\latex
 echo PDF 构建中，请稍等
-cmd /c latexmk -r latexmkrc -pdf -f -dvi- -ps- -interaction=nonstopmode -g -quiet -dependents- -nodependents -rules- -rc-report- -dir-report- -outdir=..\pdf
+latexmk -r latexmkrc -pdf -f -dvi- -ps- -interaction=nonstopmode -g -quiet -dependents- -nodependents -rules- -rc-report- -dir-report- -outdir=..\pdf
 echo PDF 文件保存在 _build\pdf 目录
 goto end
 
