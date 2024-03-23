@@ -111,48 +111,35 @@ def config_initiated(app: Sphinx, config: Config) -> None:
 
     # add configuration for docx builder
     if builder_name == "docx":
-        if not config['docx_documents']:
-            config['docx_documents'] = [
-                ('index', 'docxbuilder.docx', {
+        filename = '%s.docx' % config['project']
+        config['docx_documents'] = [
+            (
+                config['master_doc'],
+                filename,
+                {
                     'title': config['project'],
                     'creator': config['author'],
                     'subject': config['subtitle'],
-                    'created': '20240323',
-                    'version': config['version'],
-                    'revision': config['release'],
                     'description': '',
                     'keywords': ['Microsoft', 'Office', 'Word']
-                }, False)
-            ]
+                },
+                True
+            )
+        ]
 
-        if not config['docx_style']:
-            config['docx_style'] = os.path.join(theme_path, 'docx_templates', 'style.docx')
-
-        if not config['docx_pagebreak_before_section']:
-            config['docx_pagebreak_before_section'] = 2
-
-        if not config['docx_pagebreak_before_file']:
-            config['docx_pagebreak_before_file'] = 0
-
-        if not config['docx_pagebreak_before_table_of_contents']:
-            config['docx_pagebreak_before_table_of_contents'] = -1
-
-        if not config['docx_pagebreak_after_table_of_contents']:
-            config['docx_pagebreak_after_table_of_contents'] = 0
-
-        if not config['docx_coverpage']:
-            config['docx_coverpage'] = True
-
-        if not config['docx_update_fields']:
-            config['docx_update_fields'] = True
-
-        if not config['docx_table_options']:
-            config['docx_table_options'] = {
-                'landscape_columns': 0,
-                'in_single_page': False,
-                'row_splittable': False,
-                'header_in_all_page': True,
-            }
+        config['docx_style'] = os.path.join(theme_path, 'docx_templates', 'style.docx')
+        config['docx_pagebreak_before_section'] = 2
+        config['docx_pagebreak_before_file'] = 0
+        config['docx_pagebreak_before_table_of_contents'] = -1
+        config['docx_pagebreak_after_table_of_contents'] = 0
+        config['docx_coverpage'] = True
+        config['docx_update_fields'] = False
+        config['docx_table_options'] = {
+            'landscape_columns': 0,
+            'in_single_page': False,
+            'row_splittable': False,
+            'header_in_all_page': True,
+        }
 
 
 def extend_html_context(app, pagename, templatename, context, doctree):
