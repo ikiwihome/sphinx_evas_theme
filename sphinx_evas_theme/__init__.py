@@ -15,7 +15,6 @@ from sphinx import version_info as sphinx_version
 from sphinx.locale import _
 from sphinx.util.logging import getLogger
 from sphinx.util.osutil import make_filename
-from .builder import DocxBuilder
 
 __version__ = '2.0.0'
 __version_full__ = __version__
@@ -109,28 +108,57 @@ def config_initiated(app: Sphinx, config: Config) -> None:
         os.makedirs(app.outdir, exist_ok=True)
         with open(output_file, 'w+', encoding="utf-8") as package:
             package.write(latex_package)
-    
+
+    # add configuration for docx builder
+    if builder_name == "docx":
+        if not config['docx_documents']:
+            config['docx_documents'] = [
+                ('index', 'docxbuilder.docx', {
+                    'title': config['project'],
+                    'creator': config['author'],
+                    'subject': config['subtitle'],
+                    'created': '20240323',
+                    'version': config['version'],
+                    'revision': config['release'],
+                    'description': '',
+                    'keywords': ['Microsoft', 'Office', 'Word']
+                }, False)
+            ]
+
+        if not config['docx_style']:
+            config['docx_style'] = os.path.join(theme_path, 'docx_templates', 'style.docx')
+
+        if not config['docx_pagebreak_before_section']:
+            config['docx_pagebreak_before_section'] = 2
+
+        if not config['docx_pagebreak_before_file']:
+            config['docx_pagebreak_before_file'] = 0
+
+        if not config['docx_pagebreak_before_table_of_contents']:
+            config['docx_pagebreak_before_table_of_contents'] = -1
+
+        if not config['docx_pagebreak_after_table_of_contents']:
+            config['docx_pagebreak_after_table_of_contents'] = 0
+
+        if not config['docx_coverpage']:
+            config['docx_coverpage'] = True
+
+        if not config['docx_update_fields']:
+            config['docx_update_fields'] = True
+
+        if not config['docx_table_options']:
+            config['docx_table_options'] = {
+                'landscape_columns': 0,
+                'in_single_page': False,
+                'row_splittable': False,
+                'header_in_all_page': True,
+            }
+
 
 def extend_html_context(app, pagename, templatename, context, doctree):
     # Add ``sphinx_version_info`` tuple for use in Jinja templates
     context['sphinx_version_info'] = sphinx_version
     context['pdf_file'] = app.config.project
-
-def default_docx_documents(conf):
-    start_doc = conf.master_doc
-    filename = '%s.docx' % conf.project
-    properties = {
-        'title': conf.project,
-        'creator': conf.author,
-        'subject': conf.subtitle,
-        'category': '',
-        'description': '',
-        'keywords': ['Microsoft', 'Office', 'Word'],
-    }
-    toc_only = False
-    print ()
-    return [(start_doc, filename, properties, toc_only)]
-
 # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
 def setup(app: "Sphinx"):
 
@@ -165,28 +193,6 @@ def setup(app: "Sphinx"):
     app.add_config_value('watermarktext', u'EVAS Intelligence Confidential', 'env', [str])
     app.add_config_value('pdf_watermark', True, 'env', [bool])
 
-
-    # add docx support
-    app.add_builder(DocxBuilder)
-
-    app.add_config_value('docx_documents', default_docx_documents, 'env')
-    app.add_config_value('docx_style', '', 'env')
-    app.add_config_value('docx_pagebreak_before_section', 0, 'env')
-    app.add_config_value('docx_pagebreak_before_file', 0, 'env')
-    app.add_config_value('docx_pagebreak_before_table_of_contents', -1, 'env')
-    app.add_config_value('docx_pagebreak_after_table_of_contents', 0, 'env')
-    app.add_config_value('docx_coverpage', True, 'env')
-    app.add_config_value('docx_update_fields', True, 'env')
-    app.add_config_value('docx_table_options', {
-        'landscape_columns': 0,
-        'in_single_page': False,
-        'row_splittable': True,
-        'header_in_all_page': True,
-    }, 'env')
-    app.add_config_value('docx_style_names', {}, 'env')
-    app.add_config_value('docx_nested_character_style', True, 'env')
-
-
     # Add any Sphinx extension module names here, as strings. They can be
     # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
     # ones.
@@ -205,6 +211,7 @@ def setup(app: "Sphinx"):
     app.setup_extension('sphinx.ext.napoleon')
     #app.setup_extension('sphinx_sitemap')
     app.setup_extension('sphinx_togglebutton')
+    app.setup_extension('docxbuilder')
 
     app.add_source_suffix('.rst', 'restructuredtext', True)
     app.add_source_suffix('.md', 'markdown', True)
