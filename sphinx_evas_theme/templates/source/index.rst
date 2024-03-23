@@ -1,8 +1,6 @@
-奕行智能项目文档模板
-==========================================
-
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
+   :caption: 目录
    :glob:
    :numbered:
 

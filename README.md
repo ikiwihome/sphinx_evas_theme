@@ -2,6 +2,8 @@
 [![License](https://img.shields.io/pypi/l/sphinx_evas_theme.svg)](https://pypi.python.org/pypi/sphinx_evas_theme/)
 [![Documentation Status](https://readthedocs.org/projects/sphinx-evas-theme/badge/?version=latest)](http://sphinx-evas-theme.readthedocs.io/en/latest/?badge=latest)
 
+**sphinx_evas_theme V2.0.0 版本现已支持生成word文档，赶快输入make docx试用一下！**
+
 # Sphinx EVAS Theme - 为企业文档标准化而构建的sphinx主题
 
 # 项目介绍
@@ -14,9 +16,11 @@ Sphinx EVAS Theme是一个为企业文档标准化而构建的sphinx主题，支
 
 项目使用也相比sphinx以及其他主题更加简单，用户无需关注具体的sphinx以及主题配置参数，只需要填写文档元素例如标题，子标题，作者等信息，从而把精力专注在文档撰写上。
 
-- 具体的配置参数在evas命令生成的项目模板source/conf.py文件中，每个配置参数均已中文注释详细说明。
+> 具体的配置参数在evas命令生成的项目模板source/conf.py文件中，每个配置参数均已中文注释详细说明。
 
 用户通过简单的命令即可实现项目文档模板初始化(evas命令，取代sphinx-quickstart)、文档构建(make html, make pdf以及make all)工作。
+
+
 
 ## 项目参考
 
@@ -39,6 +43,7 @@ HTML显示效果
 ![html_preview1.jpg](https://img2.imgtp.com/2024/03/05/xayzjsff.jpg)
 
 ![html_preview2.jpg](https://img2.imgtp.com/2024/03/05/LkdRYau0.jpg)
+PDF显示效果
 
 ![pdf_preview.jpg](https://img2.imgtp.com/2024/03/05/V4hEokoH.jpg)
 
@@ -125,6 +130,7 @@ sphinx_evas_theme的使用非常简单，只需要在目标路径/文件夹下�
 evas
 ```
 
+
 ### 创建html
 
 ```
@@ -133,11 +139,24 @@ make html
 
 > 构建好的html在 _build/html路径下，index.html为入口
 
+
+
 ### 实时预览
 
 ```
 sphinx-autobuild source source/_build/html
 ```
+
+
+### 创建Office Word (.docx)
+
+```
+make docx
+```
+
+> 构建好的word文档在 _build/docx路径下
+
+
 
 ### 创建pdf
 
@@ -147,17 +166,23 @@ make pdf
 
 > 构建好的html在 _build/pdf路径下，文件名为project参数
 
+
+
 ### 创建html和pdf
 
 ```
 make all
 ```
 
+
+
 ### 清空_build文件夹
 
 ```
 make clean
 ```
+
+
 
 > windows下每次执行make命令时会自动检查环境，如果python, perl, xelatex, latexmk均OK，则会根据命令参数构建对应文档，否则会直接中断
 
@@ -203,6 +228,8 @@ sphinx_evas_theme
 ├───screenshot                 # README.md 图片
 │
 ├───sphinx_evas_theme          # 主题主目录
+│   ├───docx                   # 支持word文档输出，以及word模板文件
+│   │
 │   ├───latex_templates        # latex模板，包含导言和封面样式
 │   │   └───fonts              # pdf字体文件
 │   ├───locale                 # 国际化翻译，仅支持中文和英文
@@ -231,13 +258,14 @@ sphinx_evas_theme
 │   └───_templates     # 文档自定义html模板，如自定义页眉页脚等，默认为空，详细请参考Sphinx教程
 └───_build             # 构建目录，存放生成的文档
     ├───doctrees
+    ├───docx           # word生成路径
     ├───html           # html生成路径
     ├───latex          # 构建pdf中生成的latex目录
     └───pdf            # pdf生成路径
 
 ```
 
-# Live Preview 实时在线预览
+## Live Preview 实时在线预览
 
 如果你想在编辑文档时实时查看更改后的html，不必每次都重新make html，然后打开html，可以使用如下命令：
 

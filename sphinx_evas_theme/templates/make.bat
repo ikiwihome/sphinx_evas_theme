@@ -92,6 +92,7 @@ goto end
 
 :all
 %SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O% --keep-going
+%SPHINXBUILD% -M docx %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O% --keep-going
 goto pdf
 
 :clean
