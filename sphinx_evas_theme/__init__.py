@@ -135,12 +135,12 @@ def config_initiated(app: Sphinx, config: Config) -> None:
         ]
 
         config['docx_style'] = os.path.join(theme_path, 'docx_templates', 'style.docx')
-        config['docx_pagebreak_before_section'] = 2
+        config['docx_pagebreak_before_section'] = 0
         config['docx_pagebreak_before_file'] = 0
         config['docx_pagebreak_before_table_of_contents'] = -1
         config['docx_pagebreak_after_table_of_contents'] = 0
         config['docx_coverpage'] = True
-        config['docx_update_fields'] = False
+        config['docx_update_fields'] = True
         config['docx_table_options'] = {
             'landscape_columns': 0,
             'in_single_page': False,
