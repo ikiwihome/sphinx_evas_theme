@@ -132,15 +132,16 @@ def override_latex_config(app: Sphinx, config: Config) -> None:
     config["latex_additional_files"] = [
         os.path.join(theme_path, 'latex_templates', 'fonts', 'DejaVuSans.ttf'),
         os.path.join(theme_path, 'latex_templates', 'fonts', 'DejaVuSans-Bold.ttf'),
+        os.path.join(theme_path, 'latex_templates', 'fonts', 'DejaVuSans-Oblique.ttf'),
         os.path.join(theme_path, 'latex_templates', 'fonts', 'SourceHanSansSC-Regular.otf')
         ]
 
     fontpkg = r'''\usepackage[UTF8, fontset=none]{ctex}
 \usepackage{fontspec}
 
-\setmainfont{DejaVuSans.ttf}[BoldFont=DejaVuSans-Bold.ttf, AutoFakeSlant]
-\setsansfont{DejaVuSans.ttf}[BoldFont=DejaVuSans-Bold.ttf, AutoFakeSlant]
-\setmonofont{DejaVuSans.ttf}[BoldFont=DejaVuSans-Bold.ttf, AutoFakeSlant]
+\setmainfont{DejaVuSans.ttf}[BoldFont=DejaVuSans-Bold.ttf, ItalicFont=DejaVuSans-Oblique.ttf]
+\setsansfont{DejaVuSans.ttf}[BoldFont=DejaVuSans-Bold.ttf, ItalicFont=DejaVuSans-Oblique.ttf]
+\setmonofont{DejaVuSans.ttf}[BoldFont=DejaVuSans-Bold.ttf, ItalicFont=DejaVuSans-Oblique.ttf]
 
 \setCJKmainfont{SourceHanSansSC-Regular.otf}[AutoFakeBold,AutoFakeSlant]
 \setCJKsansfont{SourceHanSansSC-Regular.otf}[AutoFakeBold,AutoFakeSlant]
