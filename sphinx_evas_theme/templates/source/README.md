@@ -12,6 +12,11 @@ Sphinx EVAS Theme是一个为企业文档标准化而构建的sphinx主题，支
 
 用户通过简单的命令即可实现项目文档模板初始化(evas命令，取代sphinx-quickstart)、文档构建(make html, make pdf以及make all)工作。
 
+```{image} _static/flow.jpg
+:class: bg-primary
+:scale: 50 %
+:align: left
+```
 
 
 ## 项目参考
@@ -35,13 +40,13 @@ HTML显示效果
 ```{image} _static/html_preview1.jpg
 :class: bg-primary
 :scale: 50 %
-:align: center
+:align: left
 ```
 
 ```{image} _static/html_preview2.jpg
 :class: bg-primary
 :scale: 50 %
-:align: center
+:align: left
 ```
 
 PDF显示效果
@@ -49,7 +54,7 @@ PDF显示效果
 ```{image} _static/pdf_preview.jpg
 :class: bg-primary
 :scale: 50 %
-:align: center
+:align: left
 ```
 
 
@@ -90,7 +95,7 @@ apt-get install -y python3 python-is-python3 latexmk texlive-latex-recommended t
 ```{image} _static/path_env.jpg
 :class: bg-primary
 :scale: 50 %
-:align: center
+:align: left
 ```
 
 在上述环境安装完成后，请在windows cmd命令行或者linux终端中运行如下几个命令，如果没有显示错误，则代表环境安装完毕
@@ -139,7 +144,7 @@ pip install sphinx_evas_theme
 ```{image} _static/evas_init.jpg
 :class: bg-primary
 :scale: 50 %
-:align: center
+:align: left
 ```
 
 **提示：** 默认source目录下，除了index.rst和conf.py为必需，其他均为示例文件，可删除。
@@ -181,7 +186,7 @@ sphinx-autobuild source source/_build/html    # 编辑markdown时实时预览htm
 ```{image} _static/env_check.jpg
 :class: bg-primary
 :scale: 50 %
-:align: center
+:align: left
 ```
 
 > 目前pdf封面左下角会显示evas版权信息，如果您需要修改，请自行fork此项目并在\sphinx_evas_theme\latex_templates\titlepage.tex 第45行修改版权信息
@@ -273,7 +278,7 @@ sphinx-autobuild source source/_build/html
 ```{image} _static/live_preview.jpg
 :class: bg-primary
 :scale: 50 %
-:align: center
+:align: left
 ```
 
 

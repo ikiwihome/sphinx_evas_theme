@@ -20,6 +20,7 @@ Sphinx EVAS Theme是一个为企业文档标准化而构建的sphinx主题，支
 
 用户通过简单的命令即可实现项目文档模板初始化(evas命令，取代sphinx-quickstart)、文档构建(make html, make pdf以及make all)工作。
 
+![](https://img2.imgtp.com/2024/03/24/1eUX7bux.png)
 
 
 ## 项目参考
