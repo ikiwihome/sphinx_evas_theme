@@ -53,7 +53,8 @@ def setup(app: "Sphinx"):
     app.setup_extension('sphinx.ext.napoleon')
     # app.setup_extension('sphinx_sitemap')
     app.setup_extension('sphinx_togglebutton')
-    app.setup_extension('docxbuilder')
+    if builder_name == "docx":
+        app.setup_extension('docxbuilder')
 
     app.add_source_suffix('.rst', 'restructuredtext', True)
     app.add_source_suffix('.md', 'markdown', True)
