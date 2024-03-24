@@ -522,18 +522,18 @@ H{sub}`2`O, and 4{sup}`th` of July
 在代码块之前的反引号旁边指定一种语言，即可实现**语法高亮**  
 
 ```markdown
-\```python
-import os
-print("Hello World!")
-\```
+    ```python
+    import os
+    print("Hello World!")
+    ```
 
-\~~~ json
-{
-    "firstName": "John",
-    "lastName": "Smith",
-    "age": 25
-}
-\~~~
+    ~~~ json
+    {
+        "firstName": "John",
+        "lastName": "Smith",
+        "age": 25
+    }
+    ~~~
 ```
 
 显示效果
