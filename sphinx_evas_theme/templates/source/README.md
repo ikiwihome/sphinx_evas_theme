@@ -72,7 +72,7 @@ sphinx_evas_theme是基于sphinx创建的主题，而sphinx本身是一个python
 [https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/](https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/)
 
 - Texlive和python3在ubuntu环境一键安装命令:
-``` bash
+```bash
 apt-get install -y python3 python-is-python3 latexmk texlive-latex-recommended texlive-fonts-recommended texlive-xetex fonts-freefont-otf fonts-lmodern texlive-lang-chinese
 ```
 
@@ -93,32 +93,19 @@ apt-get install -y python3 python-is-python3 latexmk texlive-latex-recommended t
 :align: center
 ```
 
-除此之外，本项目也支持Miktex，但在构建pdf时需要安装宏包，比较麻烦，不推荐。
-
-- MikTex下载地址：\
-[https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/win32/miktex/setup/windows-x64/basic-miktex-24.1-x64.exe](https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/win32/miktex/setup/windows-x64/)
-- MikTex需要单独安装perl脚本环境
-  - perl下载地址：[https://strawberryperl.com](https://strawberryperl.com)
-
-
-
 在上述环境安装完成后，请在windows cmd命令行或者linux终端中运行如下几个命令，如果没有显示错误，则代表环境安装完毕
 
 - python
-
 - xelatex
-
 - latexmk
-
 - perl (仅windows)
-
 
 
 ## 如何安装Sphinx EVAS Theme
 
 sphinx_evas_theme托管在[PyPI](https://pypi.org/)中，通过python的pip安装：
 
-``` python
+```python
 pip install sphinx_evas_theme
 ```
 
@@ -130,7 +117,7 @@ pip install sphinx_evas_theme
 
 在venv python虚拟环境下安装的命令如下，先新建一个空文件夹，然后在文件夹中输入：
 
-``` python
+```python
 pip install virtualenv
 
 python -m venv venv
@@ -143,10 +130,11 @@ pip install sphinx_evas_theme
 ```
 
 
-
 ## 如何使用
 
-sphinx_evas_theme的使用非常简单，只需要在目标路径/文件夹下执行`evas`命令，即可创建sphinx_evas_theme项目模板
+**第一步**
+
+本项目的使用非常简单，只需要在任意空文件夹下执行`evas`命令，即可创建项目模板
 
 ```{image} _static/evas_init.jpg
 :class: bg-primary
@@ -154,65 +142,38 @@ sphinx_evas_theme的使用非常简单，只需要在目标路径/文件夹下�
 :align: center
 ```
 
+**提示：** 默认source目录下，除了index.rst和conf.py为必需，其他均为示例文件，可删除。
 
-### 创建项目模板
+
+**第二步**
+
+创建一个markdown文件，并将文件名添加到index.rst文件末尾。
+**示例:** 例如markdown文件为readme.md，则添加readme到index.rst文件末尾。
+
+**第三步**
+
+修改conf.py文件，填写标题、子标题、作者等信息
+
+**第四步**
+
+构建html、pdf、docx文档
+
 
 ```
-evas
+evas        # 创建项目模板
+
+make html   # 生成html网页，文件在_build/html路径下，index.html为入口
+
+make docx   # 生成office word文档，文件在_build/docx路径下
+
+make pdf    # 生成office pdf文档，文件在_build/pdf路径下
+
+make all    # 一次同时生成html, word, pdf
+
+make clean  # 清空_build文件夹
+
+sphinx-autobuild source source/_build/html    # 编辑markdown时实时预览html网页
 ```
-
-
-### 创建html
-
-```
-make html
-```
-
-> 构建好的html在 _build/html路径下，index.html为入口
-
-
-
-### 实时预览
-
-```
-sphinx-autobuild source source/_build/html
-```
-
-
-### 创建Office Word (.docx)
-
-```
-make docx
-```
-
-> 构建好的word文档在 _build/docx路径下
-
-
-
-### 创建pdf
-
-```
-make pdf
-```
-
-> 构建好的html在 _build/pdf路径下，文件名为project参数
-
-
-
-### 创建html和pdf
-
-```
-make all
-```
-
-
-
-### 清空_build文件夹
-
-```
-make clean
-```
-
 
 
 > windows下每次执行make命令时会自动检查环境，如果python, perl, xelatex, latexmk均OK，则会根据命令参数构建对应文档，否则会直接中断
@@ -227,7 +188,7 @@ make clean
 
 
 
-### Sphinx EVAS Theme引入了哪些Sphinx扩展？
+### 本项目引入了哪些Sphinx扩展？
 
 引入的扩展有：
 
@@ -244,13 +205,14 @@ make clean
 - sphinx.ext.githubpages
 - sphinx.ext.napoleon
 - sphinx_togglebutton
+- docxbuilder
 
 
 ### 文档编写语言
 
 Sphinx EVAS Theme已经默认开启了reStructuredText和Markdown支持
 
-- 如果你更倾向于使用Markdown，请遵循MyST Markdown，初始模板中已提供示例，使用其他Markdown语法可能会导致html和pdf无法显示或者显示异常。
+- 如果你更倾向于使用Markdown，请遵循MyST Markdown，初始模板中已提供示例，使用其他Markdown语法可能会导致html，word或pdf内容缺失无法显示或者显示异常。
 
     MyST Markdown语法请参考：https://mystmd.org/guide/typography
 

@@ -8,18 +8,18 @@ language = 'zh_CN'
 project = u'奕行智能项目文档模板'
 
 # 子标题，显示在PDF封面第二行，不显示子标题则设置为''或注释掉
-subtitle = u'子标题'
+subtitle = u'请在此输入子标题'
 
 # 文档作者，默认为 '奕行智能科技有限公司'，默认根据中英文自动切换，显示在PDF封面以及内容页左下角
-# author = u'奕行智能科技有限公司'
+author = u'奕行智能科技有限公司'
 
 # 版权信息，默认为 '2022-2024, 奕行智能科技有限公司'，根据中英文自动切换
-# copyright = u'2022-2024, 奕行智能科技有限公司'
+copyright = u'2022-2024, 奕行智能科技有限公司'
 
-# 标记文档状态为Draft还是Release，默认Release，状态显示在PDF封面右下角以及内容页右下角
+# 标记文档状态为Draft还是Release，默认Release，状态显示在PDF封面右下角以及内容页右下角，word需要手动填写
 draft_or_release = u'Release'
 
-# release标记，必填，显示在PDF文件的右下角
+# release标记，必填，显示在PDF文件的右下角，word需要手动填写
 release = 'V1.0'
 
 # 版本信息，必填，显示在html的左上角

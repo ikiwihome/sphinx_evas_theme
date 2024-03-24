@@ -120,77 +120,63 @@ pip install sphinx_evas_theme
 
 ## 如何使用
 
-sphinx_evas_theme的使用非常简单，只需要在目标路径/文件夹下执行 `evas`命令，即可创建sphinx_evas_theme项目模板
+**第一步**
 
-![evas_init.jpg](https://img2.imgtp.com/2024/03/05/k1e0vv6k.jpg)
+本项目的使用非常简单，只需要在任意空文件夹下执行`evas`命令，即可创建项目模板
 
-### 创建项目模板
-
-```
-evas
-```
-
-
-### 创建html
-
-```
-make html
+```{image} _static/evas_init.jpg
+:class: bg-primary
+:scale: 50 %
+:align: center
 ```
 
-> 构建好的html在 _build/html路径下，index.html为入口
+**提示：** 默认source目录下，除了index.rst和conf.py为必需，其他均为示例文件，可删除。
 
 
+**第二步**
 
-### 实时预览
+创建一个markdown文件，并将文件名添加到index.rst文件末尾。
+**示例:** 例如markdown文件为readme.md，则添加readme到index.rst文件末尾。
+
+**第三步**
+
+修改conf.py文件，填写标题、子标题、作者等信息
+
+**第四步**
+
+构建html、pdf、docx文档
+
 
 ```
-sphinx-autobuild source source/_build/html
+evas        # 创建项目模板
+
+make html   # 生成html网页，文件在_build/html路径下，index.html为入口
+
+make docx   # 生成office word文档，文件在_build/docx路径下
+
+make pdf    # 生成office pdf文档，文件在_build/pdf路径下
+
+make all    # 一次同时生成html, word, pdf
+
+make clean  # 清空_build文件夹
+
+sphinx-autobuild source source/_build/html    # 编辑markdown时实时预览html网页
 ```
-
-
-### 创建Office Word (.docx)
-
-```
-make docx
-```
-
-> 构建好的word文档在 _build/docx路径下
-
-
-
-### 创建pdf
-
-```
-make pdf
-```
-
-> 构建好的html在 _build/pdf路径下，文件名为project参数
-
-
-
-### 创建html和pdf
-
-```
-make all
-```
-
-
-
-### 清空_build文件夹
-
-```
-make clean
-```
-
 
 
 > windows下每次执行make命令时会自动检查环境，如果python, perl, xelatex, latexmk均OK，则会根据命令参数构建对应文档，否则会直接中断
 
-![env_check.jpg](https://img2.imgtp.com/2024/03/05/RTl0pN7m.jpg)
+```{image} _static/env_check.jpg
+:class: bg-primary
+:scale: 50 %
+:align: center
+```
 
 > 目前pdf封面左下角会显示evas版权信息，如果您需要修改，请自行fork此项目并在\sphinx_evas_theme\latex_templates\titlepage.tex 第45行修改版权信息
 
-### Sphinx EVAS Theme引入了哪些Sphinx扩展？
+
+
+### 本项目引入了哪些Sphinx扩展？
 
 引入的扩展有：
 
@@ -207,6 +193,8 @@ make clean
 - sphinx.ext.githubpages
 - sphinx.ext.napoleon
 - sphinx_togglebutton
+- docxbuilder
+
 
 ### 文档编写语言
 
@@ -281,6 +269,9 @@ sphinx-autobuild source source/_build/html
 
 > 如果你使用的是VS Code进行MyST Markdown编写，强烈建议安装MyST-Markdown扩展，它支持语法高亮、实时预览
 
+
+
+
 # MyST Markdown 语法入门
 
 MyST Markdown MyST MyST（全称 Markedly Structured Text）专为 Sphinx 项目使用而设计的 Markdown 风格。 它是 CommonMark Markdown 和一些额外的语法片段的组合，以支持 Sphinx 的功能，因此您可以用纯 Markdown 编写 Sphinx 文档。
@@ -293,7 +284,7 @@ MyST Markdown MyST MyST（全称 Markedly Structured Text）专为 Sphinx 项目
 
 为了兼容考虑，用一个空格在 `#` 和标题之间进行分隔。
 
-```markdown
+```
 # 一级标题
 
 ## 二级标题
@@ -303,7 +294,6 @@ MyST Markdown MyST MyST（全称 Markedly Structured Text）专为 Sphinx 项目
 #### 四级标题
 
 ##### 五级标题
-
 ```
 
 显示效果：
@@ -320,7 +310,8 @@ MyST Markdown MyST MyST（全称 Markedly Structured Text）专为 Sphinx 项目
 
 ## 有序列表
 
-要创建有序列表，请在每个列表项前添加数字并紧跟一个英文句点。数字不必按数学顺序排列，但是列表应当以数字 1 起始。
+要创建有序列表，请在每个列表项前添加数字并紧跟一个英文句点。  
+数字不必按数学顺序排列，但是列表应当以数字 1 起始。
 
 ```markdown
 1. 条目1
@@ -328,7 +319,6 @@ MyST Markdown MyST MyST（全称 Markedly Structured Text）专为 Sphinx 项目
 3. 条目3
     - 缩进条目
     - 缩进条目
-
 ```
 
 显示效果
@@ -336,8 +326,8 @@ MyST Markdown MyST MyST（全称 Markedly Structured Text）专为 Sphinx 项目
 1. 条目1
 2. 条目2
 3. 条目3
-   - 缩进条目
-   - 缩进条目
+    - 缩进条目
+    - 缩进条目
 
 ---
 
@@ -366,7 +356,6 @@ MyST Markdown MyST MyST（全称 Markedly Structured Text）专为 Sphinx 项目
 + 条目4
     + 缩进条目
     + 缩进条目
-
 ```
 
 显示效果
@@ -375,26 +364,30 @@ MyST Markdown MyST MyST（全称 Markedly Structured Text）专为 Sphinx 项目
 - 条目2
 - 条目3
 - 条目4
-  - 缩进条目
-  - 缩进条目
+    - 缩进条目
+    - 缩进条目
+
 
 * 条目1
 * 条目2
 * 条目3
 * 条目4
-  * 缩进条目
-  * 缩进条目
+    * 缩进条目
+    * 缩进条目
+
 
 + 条目1
 + 条目2
 + 条目3
 + 条目4
-  + 缩进条目
-  + 缩进条目
+    + 缩进条目
+    + 缩进条目
 
 ---
 
 ## 文本换行
+
+**Markdown中在段落前不要用空格（spaces）或制表符（ tabs）缩进段落。**
 
 ### 无效换行
 
@@ -410,19 +403,20 @@ And this is the second line.
 This is the first line.
 And this is the second line.
 
-### 正确换行
+### 段内换行
 
-要在没有段落的情况下换行，请使用 \ 后跟新行。这对应于 HTML 中的 `<br>` 和 LaTeX 中的 \\ 。
+要在没有段落的情况下换行，使用**两个或多个空格**进行换行，称为 结尾空格（trailing whitespace)
 
 ```markdown
-This is the first line. \
+This is the first line.  
 And this is the second line.
 ```
 
 显示效果
 
-This is the first line. 
+This is the first line.  
 And this is the second line.
+
 
 ### 新段落
 
@@ -444,9 +438,9 @@ And this is the second line.
 
 ## 字体样式
 
-要加粗文本，在短语前后各添加**两个**星号 `*`或下划线 `_`
-要斜体文本，在短语前后各添加**一个**星号 `*`或下划线 `_`
-要同时用粗体和斜体突出显示文本，在短语前后各添加**三个**星号 `*`或下划线 `_`
+要加粗文本，在短语前后各添加**两个**星号` * `或下划线` _ `  
+要斜体文本，在短语前后各添加**一个**星号` * `或下划线`_`  
+要同时用粗体和斜体突出显示文本，在短语前后各添加**三个**星号` * `或下划线` _ `  
 删除线在PDF中不可用
 
 ```markdown
@@ -486,7 +480,7 @@ H{sub}`2`O, and 4{sup}`th` of July
 
 ## 单行块引用
 
-要创建块引用，请在段落前添加一个 `>`符号。
+要创建块引用，请在段落前添加一个` > `符号。
 
 ```markdown
 > 这是一个引用块
@@ -503,32 +497,30 @@ H{sub}`2`O, and 4{sup}`th` of July
 块引用可以包含多个段落。为段落之间的空白行添加一个 `>`符号。
 
 ```markdown
-
 > 呼啸的秋风让人无限忧愁，进也忧愁，退也忧愁。
 > 
 > 异域戍边的人，哪个不陷入悲愁中？真是愁白了头啊。
 > 
 > 胡人之处多狂风，树木萧瑟干枯。
-
 ```
 
 显示效果
 
 > 呼啸的秋风让人无限忧愁，进也忧愁，退也忧愁。
->
+> 
 > 异域戍边的人，哪个不陷入悲愁中？真是愁白了头啊。
->
+> 
 > 胡人之处多狂风，树木萧瑟干枯。
 
 ---
 
 ## 代码块
 
-在代码前和后的行上使用三个反引号```或三个波浪号~~~
-在代码块之前的反引号旁边指定一种语言，即可实现**语法高亮**
+在代码前和后的行上使用三个反引号` ``` `或三个波浪号` ~~~ ` 
+在代码块之前的反引号旁边指定一种语言，即可实现**语法高亮**  
 
 ```markdown
-    ``` python
+    ```python
     import os
     print("Hello World!")
     ```
@@ -549,22 +541,22 @@ import os
 print("Hello World!")
 ```
 
-```json
+~~~json
 {
     "firstName": "John",
     "lastName": "Smith",
     "age": 25
 }
-```
+~~~
 
 ---
 
 ## 数学公式
 
-math角色和指令分别用于定义内联数学和块数学。
+math角色和指令分别用于定义内联数学和块数学。  
+**注意:** ```和{math}之间不能有空格
 
 ```markdown
-
     ```{math}
     :label: mymath
     (a + b)^2 = a^2 + 2ab + b^2
@@ -572,7 +564,6 @@ math角色和指令分别用于定义内联数学和块数学。
     (a + b)^2  &=  (a + b)(a + b) \\
             &=  a^2 + 2ab + b^2
     ```
-
 ```
 
 显示效果
@@ -599,9 +590,13 @@ math角色和指令分别用于定义内联数学和块数学。
 [^3]: This is a manually-numbered footnote definition.
 ```
 
+显示效果
+
 - This is a manually-numbered footnote reference.[^3]
 - This is an auto-numbered footnote reference.[^myref]
 
+[^myref]: This is an auto-numbered footnote definition.  
+[^3]: This is a manually-numbered footnote definition.  
 ---
 
 ## 嵌入图像
@@ -610,8 +605,6 @@ math角色和指令分别用于定义内联数学和块数学。
 
 ```markdown
 ![philly-magic-garden.jpg](https://img2.imgtp.com/2024/03/05/DsxkvNn4.jpg)
-
-
 ```
 
 显示效果
@@ -655,3 +648,21 @@ math角色和指令分别用于定义内联数学和块数学。
 [^myref]: This is an auto-numbered footnote definition.
     
 [^3]: This is a manually-numbered footnote definition.
+
+
+# 已知问题
+
+**问题1**: make docx生成的word公式显示不正确 \
+**解决方案**: 公式需要在word中手动写，或者使用截图
+
+**问题2**: Markdown使用两个及以上空格进行段内换行，在生成word中，文本没有正确换行 \
+**解决方案**: word生成暂不支持段内换行，请在word中使用SHIFT+ENTER进行段内换行
+
+**问题3**: makedown中如果文本是超长的网址链接或者没有空的连续英文，该文本在生成pdf时可能超过右页边距 \
+**解决方案**: latex普遍问题，无法解决，需要手动进行文本换行
+
+**问题4**: pdf文件没有正确生成或者部分内容缺失 \
+**解决方案**: 可能是markdown内容不正确引起的，需要检查pdf目录下的log文件是否存在error
+
+**问题5**: word封面中文档状态和版本显示不正确 \
+**解决方案**: 文档状态和版本需要在word中手动调整
