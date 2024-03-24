@@ -221,21 +221,16 @@ Sphinx EVAS Theme已经默认开启了reStructuredText和Markdown支持
 
 ## Sphinx EVAS Theme 目录结构
 
-```
-
+```python
 sphinx_evas_theme
 │
-├───docs                       # 主题示例文档
-│
-├───screenshot                 # README.md 图片
 │
 ├───sphinx_evas_theme          # 主题主目录
-│   ├───docx                   # 支持word文档输出，以及word模板文件
+│   ├───docx_templates         # 支持word文档输出，以及word模板文件
 │   │
 │   ├───latex_templates        # latex模板，包含导言和封面样式
 │   │   └───fonts              # pdf字体文件
 │   ├───locale                 # 国际化翻译，仅支持中文和英文
-│   │
 │   │
 │   ├───static                 # html js, css, logo
 │   │   ├───css                # html css样式
@@ -245,13 +240,9 @@ sphinx_evas_theme
 │       └───source
 │           ├───_static
 │           └───_templates
-├───src                        # 暂时无用
 │
 └───tests                      # pytest 测试用例
-
-
 ```
-
 
 ## 项目模板目录结构
 
