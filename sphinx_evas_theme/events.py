@@ -6,8 +6,7 @@ import sys
 from sphinx.application import Sphinx
 from sphinx import version_info as sphinx_version
 from sphinx.config import Config
-
-from . import __version__, latex_templates
+from datetime import datetime
 
 if sys.version_info < (3, 9):
     import importlib_resources as resources
@@ -37,19 +36,21 @@ def config_initiated(app: Sphinx, config: Config) -> None:
     if not config['copyright']:
         currentYear = datetime.now().year
         if config['language'] == 'zh_CN':
-            config['copyright'] = '2022-' + str(currentYear)+ ', ' + '奕行智能科技有限公司'
+            config['copyright'] = '2022-' + str(currentYear) + ', ' + '奕行智能科技有限公司'
         else:
-            config['copyright'] = '2022-' + str(currentYear)+ ', ' + 'EVAS Intelligence Co., Ltd'
+            config['copyright'] = '2022-' + str(currentYear) + ', ' + 'EVAS Intelligence Co., Ltd'
 
     if not config['master_doc']:
         config['master_doc'] = 'index'
 
     config['myst_enable_extensions'] = ["colon_fence"]
 
+
 def extend_html_context(app, pagename, templatename, context, doctree):
     # Add ``sphinx_version_info`` tuple for use in Jinja templates
     context['sphinx_version_info'] = sphinx_version
     context['pdf_file'] = app.config.project
+
 
 def override_html_config(app: Sphinx, config: Config) -> None:
 
@@ -86,6 +87,7 @@ def override_html_config(app: Sphinx, config: Config) -> None:
             'titles_only': False
         }
 
+
 def override_docx_config(app: Sphinx, config: Config) -> None:
 
     theme_path = os.path.abspath(os.path.dirname(__file__))
@@ -119,6 +121,8 @@ def override_docx_config(app: Sphinx, config: Config) -> None:
         'row_splittable': False,
         'header_in_all_page': True,
     }
+
+
 def override_latex_config(app: Sphinx, config: Config) -> None:
 
     theme_path = os.path.abspath(os.path.dirname(__file__))

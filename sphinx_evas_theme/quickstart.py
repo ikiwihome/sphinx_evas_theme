@@ -7,7 +7,7 @@ EVAS Docs Sphinx theme quick-start program
 
 import os, shutil
 from . import __version__
-from sphinx.util.console import bold
+from sphinx.util.console import bold  # type: ignore[attr-defined]
 from sphinx.util.fileutil import copy_asset
 
 
@@ -23,6 +23,7 @@ def main():
     os.makedirs('source/_templates', exist_ok=True)
     shutil.rmtree('source/__pycache__', ignore_errors=True)
     print("********创建完成，请使用make all构建文档********")
+
 
 if __name__ == '__main__':
     main()

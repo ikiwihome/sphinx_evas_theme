@@ -3,7 +3,6 @@
 import distutils.cmd
 import os
 import subprocess
-from io import open
 
 from setuptools import setup
 
