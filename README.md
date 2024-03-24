@@ -124,11 +124,7 @@ pip install sphinx_evas_theme
 
 本项目的使用非常简单，只需要在任意空文件夹下执行`evas`命令，即可创建项目模板
 
-```{image} _static/evas_init.jpg
-:class: bg-primary
-:scale: 50 %
-:align: center
-```
+![evas_init.jpg](https://img2.imgtp.com/2024/03/05/k1e0vv6k.jpg)
 
 **提示：** 默认source目录下，除了index.rst和conf.py为必需，其他均为示例文件，可删除。
 
@@ -520,18 +516,18 @@ H{sub}`2`O, and 4{sup}`th` of July
 在代码块之前的反引号旁边指定一种语言，即可实现**语法高亮**  
 
 ```markdown
-    ```python
-    import os
-    print("Hello World!")
-    ```
+\```python
+import os
+print("Hello World!")
+\```
 
-    ~~~ json
-    {
-        "firstName": "John",
-        "lastName": "Smith",
-        "age": 25
-    }
-    ~~~
+\~~~ json
+{
+    "firstName": "John",
+    "lastName": "Smith",
+    "age": 25
+}
+\~~~
 ```
 
 显示效果
