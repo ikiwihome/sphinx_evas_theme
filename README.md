@@ -200,7 +200,7 @@ Sphinx EVAS Theme已经默认开启了reStructuredText和Markdown支持
 
 ## Sphinx EVAS Theme 目录结构
 
-```python
+```
 sphinx_evas_theme
 │
 │
@@ -225,7 +225,7 @@ sphinx_evas_theme
 
 ## 项目模板目录结构
 
-```python
+```
 ├───source             # 文档内容存放目录
 │   ├───_static        # 文档自定义html静态元素，如css,js存放目录，默认为空
 │   └───_templates     # 文档自定义html模板，如自定义页眉页脚等，默认为空，详细请参考Sphinx教程

@@ -226,7 +226,7 @@ Sphinx EVAS Theme已经默认开启了reStructuredText和Markdown支持
 
 ## Sphinx EVAS Theme 目录结构
 
-```python
+```
 sphinx_evas_theme
 │
 │
@@ -261,7 +261,6 @@ sphinx_evas_theme
     ├───html           # html生成路径
     ├───latex          # 构建pdf中生成的latex目录
     └───pdf            # pdf生成路径
-
 ```
 
 
