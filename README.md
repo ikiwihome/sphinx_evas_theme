@@ -2,7 +2,7 @@
 [![License](https://img.shields.io/pypi/l/sphinx_evas_theme.svg)](https://pypi.python.org/pypi/sphinx_evas_theme/)
 [![Documentation Status](https://readthedocs.org/projects/sphinx-evas-theme/badge/?version=latest)](http://sphinx-evas-theme.readthedocs.io/en/latest/?badge=latest)
 
-**sphinx_evas_theme V2.0.0 版本现已支持生成word文档，赶快输入make docx试用一下！**
+**sphinx_evas_theme V2.0.0 版本现已支持生成word文档，赶快输入make docx尝试一下！**
 
 # 为企业文档标准化而构建的sphinx主题
 
