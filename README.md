@@ -133,6 +133,7 @@ pip install sphinx_evas_theme
 **第二步**
 
 创建一个markdown文件，并将文件名添加到index.rst文件末尾。
+
 **示例:** 例如markdown文件为readme.md，则添加readme到index.rst文件末尾。
 
 **第三步**
@@ -145,19 +146,19 @@ pip install sphinx_evas_theme
 
 
 ```
-evas        # 创建项目模板
+evas            # 创建项目模板
 
-make html   # 生成html网页，文件在_build/html路径下，index.html为入口
+make html       # 生成html网页，文件在_build/html路径下，index.html为入口
 
-make docx   # 生成office word文档，文件在_build/docx路径下
+make docx       # 生成office word文档，文件在_build/docx路径下
 
-make pdf    # 生成office pdf文档，文件在_build/pdf路径下
+make pdf        # 生成office pdf文档，文件在_build/pdf路径下
 
-make all    # 一次同时生成html, word, pdf
+make all        # 一次同时生成html, word, pdf
 
-make clean  # 清空_build文件夹
+make clean      # 清空_build文件夹
 
-sphinx-autobuild source source/_build/html    # 编辑markdown时实时预览html网页
+make livehtml   # 编辑markdown时实时预览html网页
 ```
 
 
@@ -242,8 +243,8 @@ sphinx_evas_theme
 
 如果你想在编辑文档时实时查看更改后的html，不必每次都重新make html，然后打开html，可以使用如下命令：
 
-```cmd
-sphinx-autobuild source source/_build/html
+```
+make livehtml
 ```
 
 按照提示打开这个链接：http://127.0.0.1:8000

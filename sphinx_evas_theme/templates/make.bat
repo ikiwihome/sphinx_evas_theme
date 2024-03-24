@@ -61,6 +61,7 @@ set SOURCEDIR=source
 set BUILDDIR=_build
 
 if "%1" == "" goto all
+if "%1" == "livehtml" goto livehtml
 if "%1" == "pdf" goto pdf
 if "%1" == "all" goto all
 if "%1" == "clean" goto clean
@@ -79,6 +80,10 @@ if errorlevel 9009 (
 )
 
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O% --keep-going
+goto end
+
+:livehtml
+sphinx-autobuild %SOURCEDIR% %SOURCEDIR%/_build/html
 goto end
 
 :pdf
