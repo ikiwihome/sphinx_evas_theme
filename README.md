@@ -162,11 +162,7 @@ sphinx-autobuild source source/_build/html    # 编辑markdown时实时预览htm
 
 > windows下每次执行make命令时会自动检查环境，如果python, perl, xelatex, latexmk均OK，则会根据命令参数构建对应文档，否则会直接中断
 
-```{image} _static/env_check.jpg
-:class: bg-primary
-:scale: 50 %
-:align: center
-```
+![env_check.jpg](https://img2.imgtp.com/2024/03/05/RTl0pN7m.jpg)
 
 > 目前pdf封面左下角会显示evas版权信息，如果您需要修改，请自行fork此项目并在\sphinx_evas_theme\latex_templates\titlepage.tex 第45行修改版权信息
 
@@ -627,7 +623,7 @@ math角色和指令分别用于定义内联数学和块数学。
 
 ## 超链接
 
-超链接Markdown语法代码：`[超链接显示名](超链接地址 "超链接title")`
+超链接Markdown语法代码：`[超链接显示名](超链接地址 "超链接标题")`
 
 ```markdown
 这是一个链接 [Markdown语法](https://markdown.com.cn)
