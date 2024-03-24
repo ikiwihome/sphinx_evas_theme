@@ -394,7 +394,7 @@ math角色和指令分别用于定义内联数学和块数学。
     :alt: philly magic garden
     :class: bg-primary
     :scale: 50 %
-    :align: left
+    :align: center
     ```
 ```
 显示效果
@@ -405,7 +405,7 @@ math角色和指令分别用于定义内联数学和块数学。
 :alt: philly magic garden
 :class: bg-primary
 :scale: 50 %
-:align: left
+:align: center
 ```
 
 ---------------------
