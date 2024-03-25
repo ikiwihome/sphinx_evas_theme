@@ -1,6 +1,6 @@
 # 项目介绍
 
-Sphinx EVAS Theme是一个为企业文档标准化而构建的sphinx主题，支持html和pdf标准渲染输出。
+Sphinx EVAS Theme是一个为企业文档标准化而构建的sphinx主题，支持html，word和pdf标准渲染输出。
 
 **项目亮点**:
 
@@ -25,7 +25,7 @@ Sphinx EVAS Theme是一个为企业文档标准化而构建的sphinx主题，支
 
 > 具体的配置参数在evas命令生成的项目模板source/conf.py文件中，每个配置参数均已中文注释详细说明。
 
-用户通过简单的命令即可实现项目文档模板初始化(evas命令，取代sphinx-quickstart)、文档构建(make html, make pdf以及make all)工作。
+用户通过简单的命令即可实现项目文档模板初始化(evas命令，取代sphinx-quickstart)、文档构建(make html, make docx, make pdf以及make all)工作。
 
 ```{image} _static/flow.png
 :class: bg-primary

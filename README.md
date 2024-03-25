@@ -8,7 +8,7 @@
 
 # 项目介绍
 
-Sphinx EVAS Theme是一个为企业文档标准化而构建的sphinx主题，支持html和pdf标准渲染输出。
+Sphinx EVAS Theme是一个为企业文档标准化而构建的sphinx主题，支持html，word和pdf标准渲染输出。
 
 **项目亮点**:
 
