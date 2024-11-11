@@ -48,9 +48,9 @@ if not %errorlevel% equ 0 (
 )
 echo *************** 依赖环境检查完成... ***************
 
-if not %ENV_FAIL% equ 0 (
-	goto end
-)
+rem if not %ENV_FAIL% equ 0 (
+rem	goto end
+rem )
 
 REM Command file for Sphinx documentation
 
