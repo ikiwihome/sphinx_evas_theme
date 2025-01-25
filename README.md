@@ -36,7 +36,7 @@ Sphinx EVAS Theme是一个为企业文档标准化而构建的sphinx主题，支
 
 用户通过简单的命令即可实现项目文档模板初始化(evas命令，取代sphinx-quickstart)、文档构建(make html, make docx, make pdf以及make all)工作。
 
-![](https://www.helloimg.com/i/2024/11/11/6731b88662116.png)
+![](https://www.helloimg.com/i/2025/01/25/67946d6765c67.png)
 
 
 ## 项目参考
@@ -57,12 +57,12 @@ Sphinx EVAS Theme是一个为企业文档标准化而构建的sphinx主题，支
 
 HTML显示效果
 
-![html_preview1.jpg](https://www.helloimg.com/i/2024/11/11/6731b886c12ed.jpg)
+![html_preview1.jpg](https://www.helloimg.com/i/2025/01/25/67946d66a77be.jpg)
 
-![html_preview2.jpg](https://www.helloimg.com/i/2024/11/11/6731b886a6fee.jpg)
+![html_preview2.jpg](https://www.helloimg.com/i/2025/01/25/67946d68a26b6.jpg)
 PDF显示效果
 
-![pdf_preview.jpg](https://www.helloimg.com/i/2024/11/11/6731b889edc8e.jpg)
+![pdf_preview.jpg](https://www.helloimg.com/i/2025/01/25/67946d6b72e53.jpg)
 
 ## 环境准备
 
@@ -93,7 +93,7 @@ apt-get install -y python3 python-is-python3 latexmk texlive-latex-recommended t
 - `C:\texlive\bin\windows`
 - `C:\texlive\texmf-dist`
 
-![path_env.jpg](https://www.helloimg.com/i/2024/11/11/6731b8898b0ad.jpg)
+![path_env.jpg](https://www.helloimg.com/i/2025/01/25/67946d690cefb.jpg)
 
 除此之外，本项目也支持Miktex，但在构建pdf时需要安装宏包，比较麻烦，不推荐。
 
@@ -141,7 +141,7 @@ pip install sphinx_evas_theme
 
 本项目的使用非常简单，只需要在任意空文件夹下执行`evas`命令，即可创建项目模板
 
-![evas_init.jpg](https://www.helloimg.com/i/2024/11/11/6731b8864500b.jpg)
+![evas_init.jpg](https://www.helloimg.com/i/2025/01/25/67946d66347ba.jpg)
 
 **提示：** 默认source目录下，除了index.rst和conf.py为必需，其他均为示例文件，可删除。
 
@@ -180,7 +180,7 @@ make livehtml   # 编辑markdown时实时预览html网页
 
 > windows下每次执行make命令时会自动检查环境，如果python, perl, xelatex, latexmk均OK，则会根据命令参数构建对应文档，否则会直接中断
 
-![env_check.jpg](https://www.helloimg.com/i/2024/11/11/6731b88658f4b.jpg)
+![env_check.jpg](https://www.helloimg.com/i/2025/01/25/67946d66ee158.jpg)
 
 > 目前pdf封面左下角会显示evas版权信息，如果您需要修改，请自行fork此项目并在\sphinx_evas_theme\latex_templates\titlepage.tex 第45行修改版权信息
 
@@ -265,7 +265,7 @@ make livehtml
 
 按照提示打开这个链接：http://127.0.0.1:8000
 
-![live_preview.jpg](https://www.helloimg.com/i/2024/11/11/6731b888ec401.jpg)
+![live_preview.jpg](https://www.helloimg.com/i/2025/01/25/67946d66ce640.jpg)
 
 这样你在每次更改完markdown后，内容都会直接呈现在html网页中。
 
@@ -606,12 +606,12 @@ math角色和指令分别用于定义内联数学和块数学。
 要添加图像，请使用感叹号 (!), 然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。
 
 ```markdown
-![philly-magic-garden.jpg](https://www.helloimg.com/i/2024/11/11/6731b889b106d.jpg)
+![philly-magic-garden.jpg](https://www.helloimg.com/i/2025/01/25/67946d6aed4aa.jpg)
 ```
 
 显示效果
 
-![philly-magic-garden.jpg](https://www.helloimg.com/i/2024/11/11/6731b889b106d.jpg)
+![philly-magic-garden.jpg](https://www.helloimg.com/i/2025/01/25/67946d6aed4aa.jpg)
 
 ---
 
@@ -622,12 +622,12 @@ math角色和指令分别用于定义内联数学和块数学。
 插入图片Markdown语法代码：`![图片alt](图片链接 "图片标题")`
 
 ```markdown
-[![philly-magic-garden.jpg](https://www.helloimg.com/i/2024/11/11/6731b889b106d.jpg)](https://markdown.com.cn)
+[![philly-magic-garden.jpg](https://www.helloimg.com/i/2025/01/25/67946d6aed4aa.jpg)](https://markdown.com.cn)
 ```
 
 显示效果
 
-[![philly-magic-garden.jpg](https://www.helloimg.com/i/2024/11/11/6731b889b106d.jpg)](https://markdown.com.cn)
+[![philly-magic-garden.jpg](https://www.helloimg.com/i/2025/01/25/67946d6aed4aa.jpg)](https://markdown.com.cn)
 
 ---
 
